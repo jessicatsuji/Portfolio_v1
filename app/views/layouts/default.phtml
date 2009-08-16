@@ -2,31 +2,47 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-	<title>Application</title>
+	<title>JMT Web Design+Development - The Portfolio of Jessica M. Tsuji</title>
 	
 	<link type="text/css" href="css/master.css" rel="stylesheet" />
 </head>
 
 <body>
-	<div id="wrapper">
-		<h1><a href="/" id="logo" title="Jessica Tsuji's Portfolio Logo">JMT Web Design+Development</a></h1>
-		<div id="contactInfo">
-			<span class="email">jessica.tsuji@gmail.com</span>
-			<span class="phone">808.344.4729</span>
+
+	<div id="headerWrapper">
+		<div id="headerContent">
+			<h1><a href="/" id="logo" title="Jessica Tsuji's Portfolio Logo">JMT Web Design+Development</a></h1>
+			<div id="contactInfo">
+				<span class="email">jessica.tsuji@gmail.com</span>
+				<span class="phone">808.344.4729</span>
+			</div>
+			<ul class="nav">
+				<li class="navWork">
+					<a href="#">What I Love</a>
+				</li>
+				<li class="navAbout">
+					<a href="#">Who I Am</a>
+				</li>
+				<li class="navContact">
+					<a href="#">Say Hi</a>
+				</li>
+			</ul>
 		</div>
-		<ul id="mainNav">
-			<li>
-				<a href="#">What I Love</a>
-			</li>
-			<li>
-				<a href="#">Who I Am</a>
-			</li>
-			<li>
-				<a href="#">Say Hi</a>
-			</li>
-		</ul>
-		<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-		<?= $this->layout()->content ?>
 	</div>
+	
+	<div id="bodyWrapper">
+		<div id="mainWrapper">
+			<div id="mainContent">
+				<?= $this->layout()->content ?>
+			</div>
+		</div>
+	</div>
+	
+	<div id="footerWrapper">
+		<div id="footerContent">
+			<?= $this->layout()->content ?>
+		</div>
+	</div>
+		
 </body>
 </html>

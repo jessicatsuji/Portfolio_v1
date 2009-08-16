@@ -29,15 +29,40 @@ object { display: block; }
 
 /* -- basic -- */
 
-html {
-	background: url(/images/htmlBG.gif) repeat-x #eaeaea;
-}
-
 body {
-	background: url(/images/bodyBG.jpg) center top no-repeat;
+	background: #212121 url(/images/bodyBG.jpg) center top no-repeat;
 	font-family: Verdana, Helvetica, "sans-serif";
 	font-size: 11px;
+	line-height: 10px;
 }
+
+#headerWrapper, #bodyWrapper, #mainWrapper, #footerWrapper {
+	width: 100%;
+}
+
+	#headerWrapper {
+		background: url(/images/headerBG.png) bottom center repeat-x;
+		padding-top: 1.1em;
+	}
+	
+	#bodyWrapper {
+		background: #ebebeb url(/images/mainBG.gif) top center repeat-x;
+		border-top: #fff solid 2px;
+	}
+	
+	#mainWrapper {
+		background: url(/images/homeBG.gif) top center no-repeat;
+	}
+
+#headerContent, #mainContent, #footerContent {
+	width: 1045px;
+	margin: 0 auto;
+}
+
+	#headerContent {
+		height: 128px;
+		position: relative;
+	}
 
 .button {
 	color: #333;
@@ -58,25 +83,111 @@ body {
 	background: url(/images/button_active.gif) ;
 }
 
-#wrapper {
-	width: 1045px;
-	margin: 0 auto;
-}
-
 
 /* -- links -- */
-
-#logo {
-	background-image:url(/images/logo.gif);
-	overflow:hidden;
-	text-indent:-9999px;
-	width:100%;
+h1 {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	margin-top: 1.3em;
 }
 
+#logo {
+	background-image:url(/images/logo.png);
+	height: 128px;
+	width: 228px;
+}
+
+	#logo:hover {
+		background-position: 0 -128px;
+	}
+	
+#headerContent .nav li a {
+	background-image: url(/images/mainNav.png);
+	height: 62px;
+	margin-left: 1.2em;
+}
+
+	.navWork a {
+		background-position: 0 0;
+		width: 228px;
+	}
+
+		.navWork a:hover {
+			background-position: 0 -62px;
+		}
+
+	.navAbout a {
+		background-position: -240px 0;
+		width: 195px;
+	}
+
+		.navAbout a:hover {
+			background-position: -240px -62px;
+		}
+
+	.navContact a {
+		background-position: -446px 0;
+		width: 143px;
+	}
+
+		.navContact a:hover {
+			background-position: -446px -62px;
+		}
+
+
+/* -- content styles -- */
+
+#contactInfo span {
+	color: #fff;
+	display: block;
+	text-align: right;
+	margin-bottom: 1em;
+}
+
+h2.welcome {
+	background-image:url(/images/welcome.gif);
+	height: 54px;
+	width: 337px;
+}
+
+#headerContent .nav {
+	bottom: 0;
+	height: 62px;
+	right: 0;
+	width: 606px;
+	position: absolute;
+}
+	
+	#headerContent .nav li {
+		list-style-image:none;
+		list-style-position:outside;
+		list-style-type:none;
+	}
+
+
+/*-- img replace -- */
+
+#logo, #headerContent .nav li a, h2.welcome {
+	display: block;
+	overflow:hidden;
+	text-indent:-9999px;
+}
+		
+
+/* -- floats -- */
+
+h1, #headerContent .nav li a {
+	float: left;
+}
+
+#contactInfo, #headerContent .nav {
+	float: right;
+}
 
 /* -- clearing all floats --*/
 
-#headerContainer:after {
+#headerContent:after {
 	clear: both;
 	content: ".";
 	display: block;
