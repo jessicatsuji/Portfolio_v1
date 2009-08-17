@@ -31,6 +31,7 @@ object { display: block; }
 
 body {
 	background: #212121 url(/images/bodyBG.jpg) center top no-repeat;
+	color: #404040;
 	font-family: Verdana, Helvetica, "sans-serif";
 	font-size: 11px;
 	line-height: 10px;
@@ -185,29 +186,209 @@ h2.welcome {
 	height: 42px;
 }
 
+
+/* -- featured work (no js) -- */
+
 #featuredWork {
 	background: url(/images/featShadow.png) center top no-repeat;
-	padding: .3em 2em;
+	padding: .8em 2em;
 	width: 999px;
 }
 
 #featuredWork li.project {
-	background: #ccc;
+	background: #ebebeb;
 	border: 6px #fff solid;
-	margin-bottom: 1em;
+	margin-bottom: 2em;
+	position: relative;
 	width: 987px;
 }
 
+#featuredWork h3 {
+	background-image: url(/images/featProjNav.png);
+	background-repeat: no-repeat;
+	height: 78px;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 281px;
+}
+
+	#featuredWork .featBlend h3 {
+		background-position: -562px 0;
+	}
+
+	#featuredWork .featEncompass h3 {
+		background-position: -562px -84px;
+	}
+
+	#featuredWork .featJohnny h3 {
+		background-position: -562px -167px;
+	}
+
+	#featuredWork .featHawaiian h3 {
+		background-position: -562px -250px;
+	}
+
+#featuredWork address {
+	border-top: 6px #fff solid;
+	border-right: 6px #fff solid;
+	color: #b0b0b0;
+	display: block;
+	font-size: 30px;
+	font-style: normal;
+	font-weight: bold;
+	height: 58px;
+	left: 0;
+	line-height: 16px;
+	padding: 20px 0 0 12px;
+	position: absolute;
+	top: 78px;
+	width: 228px;
+}
+
+	#featuredWork address a {
+		display: block;
+		font-size: 14px;
+		font-weight: normal;
+		margin-top: 8px;
+		text-transform: uppercase;
+	}
+
+#featuredWork p {
+	border-top: 6px #fff solid;
+	border-right: 6px #fff solid;
+	display: block;
+	height: 158px;
+	left: 0;
+	line-height: 18px;
+	padding: 4px 2px 0 12px;
+	position: absolute;
+	top: 162px;
+	width: 226px;
+}
+
+	#featuredWork strong {
+		color: #b0b0b0; 
+		display: block;
+		font-size: 30px;
+		font-weight: bold;
+		line-height: normal;
+	}
+
 #featuredWork li ul {
+	background: url(/images/grayStripe.gif) repeat;
+	border-left: #d0d0d0 solid 1px;
+	height: 303px;
+	padding: 1.2em;
+	width:713px;
+	overflow: hidden;
+}
+
+#featuredWork li ul li {
+	border: #fff solid 1px;
 	height: 301px;
+	margin-bottom: 1.2em;
 	width:715px;
 	overflow: hidden;
 }
 
 
+
+/*-- featured work (w/ js) -- */
+
+#featuredWork {
+	position: relative;
+	height: 354px;
+}
+
+#featuredWork li.project {
+	background: none;
+	left: 2em;
+	position: absolute;
+	top: .8em;
+}
+
+#featuredWork h3 {
+	background-color: #ebebeb;
+	border-bottom: #fff solid 6px;
+	border-right: #fff solid 6px;
+	width: 240px;
+}
+
+#featuredWork .hover h3 {
+	background-color: #f1f1f1;
+}
+
+#featuredWork .active h3 {
+	background-color: transparent;
+	border-right: none;
+	border-bottom: none;
+	height: 84px;
+	width: 281px;
+	z-index: 1;
+}
+
+	#featuredWork .featBlend h3 {
+		background-position: 0 0;
+		top: 0px;
+	}
+	
+		#featuredWork .featBlend.hover h3 {
+			background-position: -281px 0;
+		}
+		
+		#featuredWork .featBlend.active h3 {
+			background-position: -562px 0;
+		}
+
+	#featuredWork .featEncompass h3 {
+		background-position: 0 -84px;
+		top: 84px;
+	}
+	
+		#featuredWork .featEncompass.hover h3 {
+			background-position: -281px -84px;
+		}
+		
+		#featuredWork .featEncompass.active h3 {
+			background-position: -562px -84px;
+		}
+
+	#featuredWork .featJohnny h3 {
+		background-position: 0 -167px;
+		top: 168px;
+	}
+	
+		#featuredWork .featJohnny.hover h3 {
+			background-position: -281px -167px;
+		}
+		
+		#featuredWork .featJohnny.active h3 {
+			background-position: -562px -167px;
+		}
+
+	#featuredWork .featHawaiian h3 {
+		background-position: 0 -250px;
+		border-bottom: none;
+		top: 252px;
+	}
+	
+		#featuredWork .featHawaiian.hover h3 {
+			background-position: -281px -250px;
+		}
+		
+		#featuredWork .featHawaiian.active h3 {
+			background-position: -562px -250px;
+		}
+
+#featuredWork address, #featuredWork p {
+	display: none;
+}
+
+
 /*-- img replace -- */
 
-#logo, #headerContent .nav li a, h2.welcome {
+#logo, #headerContent .nav li a, h2.welcome, #featuredWork h3 {
 	display: block;
 	overflow:hidden;
 	text-indent:-9999px;
@@ -216,17 +397,17 @@ h2.welcome {
 
 /* -- floats -- */
 
-h1, #headerContent .nav li a {
+h1, #headerContent .nav li a, #featuredWork h3, #featuredWork address, #featuredWork p {
 	float: left;
 }
 
-#contactInfo, #headerContent .nav {
+#contactInfo, #headerContent .nav, #featuredWork li ul {
 	float: right;
 }
 
 /* -- clearing all floats --*/
 
-#headerContent:after {
+#headerContent:after, #featuredWork li.project:after {
 	clear: both;
 	content: ".";
 	display: block;
