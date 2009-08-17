@@ -63,6 +63,10 @@ body {
 		height: 128px;
 		position: relative;
 	}
+	
+	#mainContent {
+		padding: 2em 0;
+	}
 
 .button {
 	color: #333;
@@ -164,6 +168,41 @@ h2.welcome {
 		list-style-position:outside;
 		list-style-type:none;
 	}
+	
+.headline {
+	padding-left: 2.2em;
+	margin-bottom: 3em;
+}
+	
+.headline p {
+	background: url(/images/quotes.gif) no-repeat;
+	color: #770015;
+	font-size: 18px;
+	line-height: 1em;
+	margin-top: .6em;
+	padding: .8em 4.8em 0 .8em;
+	width: 730px;
+	height: 42px;
+}
+
+#featuredWork {
+	background: url(/images/featShadow.png) center top no-repeat;
+	padding: .3em 2em;
+	width: 999px;
+}
+
+#featuredWork li.project {
+	background: #ccc;
+	border: 6px #fff solid;
+	margin-bottom: 1em;
+	width: 987px;
+}
+
+#featuredWork li ul {
+	height: 301px;
+	width:715px;
+	overflow: hidden;
+}
 
 
 /*-- img replace -- */
