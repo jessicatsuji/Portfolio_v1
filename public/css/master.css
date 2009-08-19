@@ -1,7 +1,7 @@
 @charset "utf-8";
 /* Main Styles */
 
-/* -- reset -- */
+/* !-- reset -- */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -27,7 +27,7 @@ em { font-style: italic; }
 object { display: block; }
 
 
-/* -- basic -- */
+/* !-- basic -- */
 
 body {
 	background: #212121 url(/images/bodyBG.jpg) center top no-repeat;
@@ -89,7 +89,7 @@ body {
 }
 
 
-/* -- links -- */
+/* !-- links -- */
 h1 {
 	position: absolute;
 	bottom: 0;
@@ -141,7 +141,7 @@ h1 {
 		}
 
 
-/* -- content styles -- */
+/* !-- content styles -- */
 
 #contactInfo span {
 	color: #fff;
@@ -187,7 +187,7 @@ h2.welcome {
 }
 
 
-/* -- featured work (no js) -- */
+/* !-- featured work (no js) -- */
 
 #featuredWork {
 	background: url(/images/featShadow.png) center top no-repeat;
@@ -197,7 +197,7 @@ h2.welcome {
 
 #featuredWork li.project {
 	background: #ebebeb;
-	border: 6px #fff solid;
+	border: 5px #fff solid;
 	margin-bottom: 2em;
 	position: relative;
 	width: 987px;
@@ -206,7 +206,7 @@ h2.welcome {
 #featuredWork h3 {
 	background-image: url(/images/featProjNav.png);
 	background-repeat: no-repeat;
-	height: 78px;
+	height: 77px;
 	left: 0;
 	position: absolute;
 	top: 0;
@@ -230,8 +230,8 @@ h2.welcome {
 	}
 
 #featuredWork address {
-	border-top: 6px #fff solid;
-	border-right: 6px #fff solid;
+	border-top: 5px #fff solid;
+	border-right: 5px #fff solid;
 	color: #b0b0b0;
 	display: block;
 	font-size: 30px;
@@ -242,8 +242,8 @@ h2.welcome {
 	line-height: 16px;
 	padding: 20px 0 0 12px;
 	position: absolute;
-	top: 78px;
-	width: 228px;
+	top: 77px;
+	width: 230px;
 }
 
 	#featuredWork address a {
@@ -255,16 +255,16 @@ h2.welcome {
 	}
 
 #featuredWork p {
-	border-top: 6px #fff solid;
-	border-right: 6px #fff solid;
+	border-top: 5px #fff solid;
+	border-right: 5px #fff solid;
 	display: block;
-	height: 158px;
+	height: 161px;
 	left: 0;
 	line-height: 18px;
 	padding: 4px 2px 0 12px;
 	position: absolute;
-	top: 162px;
-	width: 226px;
+	top: 160px;
+	width: 228px;
 }
 
 	#featuredWork strong {
@@ -279,8 +279,8 @@ h2.welcome {
 	background: url(/images/grayStripe.gif) repeat;
 	border-left: #d0d0d0 solid 1px;
 	height: 303px;
-	padding: 1.2em;
-	width:713px;
+	padding: 1.1em;
+	width:715px;
 	overflow: hidden;
 }
 
@@ -294,95 +294,112 @@ h2.welcome {
 
 
 
-/*-- featured work (w/ js) -- */
+/* !-- featured work (w/ js) -- */
 
-#featuredWork {
+#featuredWork.enabled {
 	position: relative;
 	height: 354px;
 }
 
-#featuredWork li.project {
-	background: none;
+#featuredWork.enabled li.project {
+	background: #ebebeb;
 	left: 2em;
 	position: absolute;
 	top: .8em;
 }
 
-#featuredWork h3 {
-	background-color: #ebebeb;
-	border-bottom: #fff solid 6px;
-	border-right: #fff solid 6px;
-	width: 240px;
+#featuredWork.enabled h3 {
+	border-bottom: #fff solid 5px;
+	width: 246px;
+	z-index: 2;
 }
 
-#featuredWork .hover h3 {
+#featuredWork.enabled .hover h3 {
 	background-color: #f1f1f1;
 }
 
-#featuredWork .active h3 {
+#featuredWork.enabled .active h3 {
 	background-color: transparent;
 	border-right: none;
 	border-bottom: none;
-	height: 84px;
+	height: 83px;
+	width: 281px;
+}
+
+#featuredWork.enabled h3.arrow {
+	background-position: -1124px 0;
+	border: none;
+	height: 83px;
+	margin: 1.1em 0 0 2.5em;
 	width: 281px;
 	z-index: 1;
 }
 
-	#featuredWork .featBlend h3 {
+	#featuredWork.enabled .featBlend h3 {
 		background-position: 0 0;
 		top: 0px;
 	}
 	
-		#featuredWork .featBlend.hover h3 {
+		#featuredWork.enabled .featBlend.hover h3 {
 			background-position: -281px 0;
 		}
 		
-		#featuredWork .featBlend.active h3 {
+		#featuredWork.enabled .featBlend.active h3 {
 			background-position: -562px 0;
 		}
 
-	#featuredWork .featEncompass h3 {
+	#featuredWork.enabled .featEncompass h3 {
 		background-position: 0 -84px;
-		top: 84px;
+		top: 82px;
 	}
 	
-		#featuredWork .featEncompass.hover h3 {
+		#featuredWork.enabled .featEncompass.hover h3 {
 			background-position: -281px -84px;
 		}
 		
-		#featuredWork .featEncompass.active h3 {
+		#featuredWork.enabled .featEncompass.active h3 {
 			background-position: -562px -84px;
 		}
 
-	#featuredWork .featJohnny h3 {
+	#featuredWork.enabled .featJohnny h3 {
 		background-position: 0 -167px;
-		top: 168px;
+		top: 163px;
 	}
 	
-		#featuredWork .featJohnny.hover h3 {
+		#featuredWork.enabled .featJohnny.hover h3 {
 			background-position: -281px -167px;
 		}
 		
-		#featuredWork .featJohnny.active h3 {
+		#featuredWork.enabled .featJohnny.active h3 {
 			background-position: -562px -167px;
 		}
 
-	#featuredWork .featHawaiian h3 {
+	#featuredWork.enabled .featHawaiian h3 {
 		background-position: 0 -250px;
 		border-bottom: none;
-		top: 252px;
+		top: 245px;
 	}
 	
-		#featuredWork .featHawaiian.hover h3 {
+		#featuredWork.enabled .featHawaiian.hover h3 {
 			background-position: -281px -250px;
 		}
 		
-		#featuredWork .featHawaiian.active h3 {
+		#featuredWork.enabled .featHawaiian.active h3 {
 			background-position: -562px -250px;
 		}
 
-#featuredWork address, #featuredWork p {
+#featuredWork.enabled address, #featuredWork.enabled p {
 	display: none;
+}
+
+#featuredWork.enabled li ul {
+	border-left: #fff solid 5px;
+	height: 298px;
+	width: 717px;
+}
+
+#featuredWork.enabled li ul li {
+	height: 295px;
 }
 
 
@@ -395,7 +412,7 @@ h2.welcome {
 }
 		
 
-/* -- floats -- */
+/* !-- floats -- */
 
 h1, #headerContent .nav li a, #featuredWork h3, #featuredWork address, #featuredWork p {
 	float: left;
@@ -405,7 +422,7 @@ h1, #headerContent .nav li a, #featuredWork h3, #featuredWork address, #featured
 	float: right;
 }
 
-/* -- clearing all floats --*/
+/* !-- clearing all floats --*/
 
 #headerContent:after, #featuredWork li.project:after {
 	clear: both;

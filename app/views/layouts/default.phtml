@@ -12,6 +12,12 @@
 	<script type="text/javascript">
 		$(function() {
 			sIFR.replaceElement(".headline>p", named({sFlashSrc: "/swf/quicksand.swf", sColor: "#770015", sBgColor: "#d6d6d6", sWmode: "transparent"}));
+			
+			$('#featuredWork').addClass('enabled');
+			
+			$('#featuredWork h3').click(function() {
+				console.log(this);
+			});
 		});
 	</script>
 
