@@ -186,6 +186,40 @@ h2.welcome {
 	height: 42px;
 }
 
+#footerWrapper {
+	background: #343434 url(/images/footBG.gif) top left repeat-x;
+	height: 250px;
+	padding-top: 2em;
+}
+
+#footerContent {
+	width: 1000px;
+}
+
+#footerContent .foot, #twitter, #social {
+	height: 10.6em;
+	margin-right: 1em;
+	width: 315px;
+}
+
+#footerContent .foot, #twitter {
+	background: url(/images/footBorder.gif) top right no-repeat;
+	padding-right: 1.4em;
+}
+
+#twitter h5 {
+	background: url(/images/saying.gif) no-repeat;
+	border-bottom: #3c3c3c double 4px;
+	height: 19px;
+	margin-bottom: .8em;
+	padding-bottom: .2em;
+	width: 303px;
+}
+
+#social {
+	margin-right: 0;
+}
+
 
 /* !-- featured work (no js) -- */
 
@@ -335,6 +369,11 @@ h2.welcome {
 	z-index: 1;
 }
 
+#featuredWork.enabled h3.activeTxt {
+	display: none;
+	z-index: 3;
+}
+
 	#featuredWork.enabled .featBlend h3 {
 		background-position: 0 0;
 		top: 0px;
@@ -346,6 +385,10 @@ h2.welcome {
 		
 		#featuredWork.enabled .featBlend.active h3 {
 			background-position: -562px 0;
+		}
+		
+		#featuredWork.enabled .featBlend h3.activeTxt {
+			background-position: -843px 0;
 		}
 
 	#featuredWork.enabled .featEncompass h3 {
@@ -360,10 +403,14 @@ h2.welcome {
 		#featuredWork.enabled .featEncompass.active h3 {
 			background-position: -562px -84px;
 		}
+		
+		#featuredWork.enabled .featEncompass h3.activeTxt {
+			background-position: -843px -84px;
+		}
 
 	#featuredWork.enabled .featJohnny h3 {
 		background-position: 0 -167px;
-		top: 163px;
+		top: 164px;
 	}
 	
 		#featuredWork.enabled .featJohnny.hover h3 {
@@ -373,11 +420,15 @@ h2.welcome {
 		#featuredWork.enabled .featJohnny.active h3 {
 			background-position: -562px -167px;
 		}
+		
+		#featuredWork.enabled .featJohnny h3.activeTxt {
+			background-position: -843px -167px;
+		}
 
 	#featuredWork.enabled .featHawaiian h3 {
 		background-position: 0 -250px;
 		border-bottom: none;
-		top: 245px;
+		top: 246px;
 	}
 	
 		#featuredWork.enabled .featHawaiian.hover h3 {
@@ -386,6 +437,10 @@ h2.welcome {
 		
 		#featuredWork.enabled .featHawaiian.active h3 {
 			background-position: -562px -250px;
+		}
+		
+		#featuredWork.enabled .featHawaiian h3.activeTxt {
+			background-position: -843px -250px;
 		}
 
 #featuredWork.enabled address, #featuredWork.enabled p {
@@ -405,7 +460,7 @@ h2.welcome {
 
 /*-- img replace -- */
 
-#logo, #headerContent .nav li a, h2.welcome, #featuredWork h3 {
+#logo, #headerContent .nav li a, h2.welcome, #featuredWork h3, #twitter h5 {
 	display: block;
 	overflow:hidden;
 	text-indent:-9999px;
@@ -414,17 +469,17 @@ h2.welcome {
 
 /* !-- floats -- */
 
-h1, #headerContent .nav li a, #featuredWork h3, #featuredWork address, #featuredWork p {
+h1, #headerContent .nav li a, #featuredWork h3, #featuredWork address, #featuredWork p, #footerContent .foot, #twitter {
 	float: left;
 }
 
-#contactInfo, #headerContent .nav, #featuredWork li ul {
+#contactInfo, #headerContent .nav, #featuredWork li ul, #social {
 	float: right;
 }
 
 /* !-- clearing all floats --*/
 
-#headerContent:after, #featuredWork li.project:after {
+#headerContent:after, #featuredWork li.project:after, #footerContent:after {
 	clear: both;
 	content: ".";
 	display: block;
