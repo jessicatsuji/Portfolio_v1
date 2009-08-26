@@ -91,7 +91,7 @@ body {
 
 
 /* !-- links -- */
-a {color: #bbbbbb; text-decoration: none}
+a {color: #bbbbbb; text-decoration: none; outline: none;}
 a:visited {color: #bbbbbb;}
 a:hover,a:focus {color: #b31c27; text-decoration: none;}
 a:active {}
@@ -180,31 +180,31 @@ h1 {
 		margin-left: 0;
 	}
 
-		#social .nav li.navBehance a:hover {
+		#social .nav li.navBehance a:hover, #social .nav li.navBehance a:focus {
 			background-position: 0 -46px;
 		}
 
-	.navTwitter a {
+	#social .nav li.navTwitter a {
 		background-position: -64px 0;
 	}
 
-		.navTwitter a:hover {
+		#social .nav li.navTwitter a:hover, #social .nav li.navTwitter a:focus {
 			background-position: -64px -46px;
 		}
 
-	.navLinkedIn a {
+	#social .nav li.navLinkedIn a {
 		background-position: -129px 0;
 	}
 
-		.navLinkedIn a:hover {
+		#social .nav li.navLinkedIn a:hover, #social .nav li.navLinkedIn a:focus {
 			background-position: -129px -46px;
 		}
 
-	.navFacebook a {
+	#social .nav li.navFacebook a {
 		background-position: -195px 0;
 	}
 
-		.navFacebook a:hover {
+		#social .nav li.navFacebook a:hover, #social .nav li.navFacebook a:focus {
 			background-position: -195px -46px;
 		}
 
@@ -343,11 +343,13 @@ h1 {
 }
 
 	.col2 a {
+		border-bottom: #a5a5a5 dotted 1px;
 		color: #575757;
 		line-height: 20px;
 	}
 
 		.col2 a:hover, .col2 a:focus {
+			border-bottom: #8a4856 dotted 1px;
 			color: #6c0011;
 		}
 
@@ -360,7 +362,7 @@ h1 {
 	
 	.interests1, .interests2, .clients, .friends1, .friends2 {
 		padding: 1em;
-		width: 40%;
+		width: 42%;
 	}
 	
 	.clients, .col2 h4 {
@@ -611,11 +613,13 @@ h1 {
 	border-bottom: #fff solid 5px;
 	cursor: pointer;
 	width: 246px;
-	z-index: 1
+	z-index: 1;
 }
 
 #featuredWork.enabled .hover h3 {
 	background-color: #f1f1f1;
+	cursor: pointer;
+	width: 241px;
 }
 
 #featuredWork.enabled .active h3 {

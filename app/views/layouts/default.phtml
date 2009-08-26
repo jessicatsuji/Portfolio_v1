@@ -7,10 +7,10 @@
 	<link type="text/css" href="/css/master.css" rel="stylesheet" />
 	<link type="text/css" href="/css/sIFR-print.css" rel="stylesheet" media="print" />
 	<link type="text/css" href="/css/sIFR-screen.css" rel="stylesheet" media="screen" />
-	<script type="text/javascript" src="/js/jquery.js" language="javascript"></script>
-	<script type="text/javascript" src="/js/easing.js" language="javascript"></script>
-	<script type="text/javascript" src="/js/jquery.tweet.js" language="javascript"></script>  
-	<script type="text/javascript" src="/js/sifr.js" language="javascript"></script>
+	<script type="text/javascript" src="/js/jquery.js"></script>
+	<script type="text/javascript" src="/js/easing.js"></script>
+	<script type="text/javascript" src="/js/jquery.tweet.js"></script>  
+	<script type="text/javascript" src="/js/sifr.js"></script>
 	<script type="text/javascript">
 		$(function() {
 			//sIFR
@@ -21,7 +21,11 @@
 			$('.featBlend').prepend('<h3 class="activeTxt"><!-- --></h3>');	
 			$('.activeTxt').show();	
 			
-			$('#featuredWork h3').click(function() {
+			$('#featuredWork h3').hover(function() {
+				$(this).parent().addClass('hover');
+			}, function() {
+				$(this).parent().removeClass('hover');
+			}).click(function() {
 				$('.activeTxt').animate({opacity:1}, 500).fadeOut(800, function() {
 					$(this).remove();	
 				});
@@ -37,6 +41,7 @@
 			});
 			
 			$('#featuredWork h3.arrow').unbind('click');
+			$('.activeTxt').unbind('mouseover');
 			
 			//Twitter
 			$(".tweet").tweet({
