@@ -833,6 +833,10 @@ h1 {
 				background-position: 0 -66px;
 			}
 			
+	.full {
+		display: none;
+	}
+			
 	.open .full {
 		background: url(/images/grayStripe.gif) repeat;
 		margin-top: 82px;
