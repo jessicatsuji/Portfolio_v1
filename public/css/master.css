@@ -576,7 +576,7 @@ h1 {
 		line-height: normal;
 	}
 
-#featuredWork li ul {
+#featuredWork li .gallery {
 	background: url(/images/grayStripe.gif) repeat;
 	border-left: #d0d0d0 solid 1px;
 	height: 303px;
@@ -585,10 +585,15 @@ h1 {
 	overflow: hidden;
 }
 
-#featuredWork li ul li {
+#featuredWork li .gallery ul {
+	width: 2895px;
+}
+
+#featuredWork li .gallery ul li {
 	border: #fff solid 1px;
 	height: 301px;
 	margin-bottom: 1.2em;
+	margin-right: 1.2em;
 	width:715px;
 	overflow: hidden;
 }
@@ -718,13 +723,13 @@ h1 {
 	display: none;
 }
 
-#featuredWork.enabled li ul {
+#featuredWork.enabled li .gallery {
 	border-left: #fff solid 5px;
 	height: 298px;
 	width: 717px;
 }
 
-#featuredWork.enabled li ul li {
+#featuredWork.enabled li .gallery ul li {
 	height: 295px;
 }
 
@@ -797,8 +802,25 @@ h1 {
 	}
 	
 		.open .meta p {
-			width: 299px;
+			color: #616060;
+			font-size: 14px;
+			width: 545px;
 		}
+		
+			.open .meta p strong {
+				color: #767676;
+				font-size: 22px;
+				vertical-align: baseline;
+			}
+		
+			.open .meta p.role {
+				border-bottom: #ababab solid 1px;
+				padding: 13px 0 10px;
+			}
+			
+			.open .meta p.date {
+				padding: 11px 0 0;
+			}
 		
 		.open .meta .view {
 			background: url(/images/viewBtn.png);
@@ -810,11 +832,102 @@ h1 {
 			.open .meta .view:hover, .open .meta .view:focus {
 				background-position: 0 -66px;
 			}
+			
+	.open .full {
+		background: url(/images/grayStripe.gif) repeat;
+		margin-top: 82px;
+		padding: 10px;
+	}
+			
+	.open .gallery {
+		height: 301px;
+		overflow: hidden;
+		margin-bottom: 10px;
+		position: relative;
+		width: 967px;
+	}
+	
+		.open .gallery ul {
+			width: 2901px;
+			height: 301px;
+		}
+	
+		.open .gallery li {
+			border: #fff solid 1px;
+			height: 299px;
+			width: 965px;
+		}
+		
+	.open .overlay {
+		display: none;
+		position: absolute;
+		height: 301px;
+		padding-top: 10em;
+		width: 967px;
+	}
+	
+		.open .overlay a {
+			background: url(/images/overlayArrows.png);
+			height: 90px;
+			width: 113px;
+		}
+		
+			.open .overlay a.next {
+				background-position: 0 -90px;
+			}
+		
+				.open .overlay a.previous:hover, .open .overlay a.previous:focus {
+					background-position: -113px 0;
+				}
+			
+				.open .overlay a.next:hover, .open .overlay a.next:focus {
+					background-position: -113px -90px;
+				}
+				
+	.open .info {
+		background: url(/images/grayStripe_dark.gif) repeat;
+		border: #f6f6f6 solid 1px;
+		color: #333;
+		padding: 1em 2em;
+	}
+	
+		.open .info h3 {
+			border-bottom: #8c5d5d solid 1px;
+			color: #6c0011;
+			font-size: 22px;
+			line-height: normal;
+			margin-bottom: .5em;
+		}
+	
+		.open .info .overview {
+			background: url(/images/overviewBorder.gif) top right no-repeat;
+			padding-right: 25px;
+			font-size: 12px;
+			line-height: 16px;
+			width: 655px;
+		}
+		
+			.open .info .overview p {
+				margin-bottom: .6667em;
+			}
+		
+		.open .info .tech {
+			width: 228px;
+		}
+		
+			.open .info .tech ul {
+				list-style: circle inside;
+				margin-top: 13px;
+			}
+			
+				.open .info .tech ul li {
+					margin-bottom: 1em;
+				}
 
 
 /* !-- img replace -- */
 
-#logo, #headerContent .nav li a, .headline h2, .resume a, #about .col2 h3, #featuredWork h3, .open .meta .view, #twitter h5, #social .nav li a, .nav.work li.project a.title span {
+#logo, #headerContent .nav li a, .headline h2, .resume a, #about .col2 h3, #featuredWork h3, .open .meta .view, .open .overlay a, #twitter h5, #social .nav li a, .nav.work li.project a.title span {
 	display: block;
 	overflow:hidden;
 	text-indent:-9999px;
@@ -823,17 +936,17 @@ h1 {
 
 /* !-- floats -- */
 
-h1, #headerContent .nav li a, .col1, .about img, .resume, .interests1, .interests2, .col2 h4, .clients, .friends1, .friends2, #featuredWork h3, #featuredWork address, #featuredWork p, #footerContent .footMeta, .open .meta p, .foot.nav li, #twitter, .tweet_avatar, .tweet_date, #social .nav li a {
+h1, #headerContent .nav li a, .col1, .about img, .resume, .interests1, .interests2, .col2 h4, .clients, .friends1, .friends2, #featuredWork h3, #featuredWork address, #featuredWork p, #featuredWork li .gallery ul li, .open .gallery li, .open .overlay a.previous, .open .info .overview, #footerContent .footMeta, .open .meta p, .foot.nav li, #twitter, .tweet_avatar, .tweet_date, #social .nav li a {
 	float: left;
 }
 
-#contactInfo, #headerContent .nav, .col2, #featuredWork li ul, .open .meta .view, #social, #social .nav, #social .socialType {
+#contactInfo, #headerContent .nav, .col2, #featuredWork li .gallery, .open .meta .view, .open .overlay a.next, .open .info .tech, #social, #social .nav, #social .socialType {
 	float: right;
 }
 
 /* !-- clearing all floats -- */
 
-#headerContent:after, #mainContent:after, .widget:after, #featuredWork li.project:after, .open .meta:after, #footerContent:after, .foot.nav:after, #social:after {
+#headerContent:after, #mainContent:after, .widget:after, #featuredWork li.project:after, .open .meta:after, .open .gallery:after, .open .overlay:after, .open .info:after, #footerContent:after, .foot.nav:after, #social:after {
 	clear: both;
 	content: ".";
 	display: block;

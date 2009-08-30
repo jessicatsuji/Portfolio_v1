@@ -64,6 +64,66 @@
 	        }, function() {
 	        	$('#social .socialType').text("");
 	        });
+	        
+	        //Work
+	        $('.full').hide();
+	        
+	        $('#blend .title').toggle(function() {
+	        	$(this).parent().addClass('open');
+	        	$('.full').slideDown({
+	        		"duration": 800,
+	        		"easing": "easeOutBounce"
+	        	});
+	        	return false;
+	        }, function() {
+	        	$('.full').slideUp({
+	        		"duration": 600,
+	        		"easing": "easeInBack",
+	        		"complete": function() {
+			        	$(this).parent().removeClass('open');	        		
+	        		}
+	        	});
+	        	return false;
+	        });
+	        
+	        $('.open .gallery').bind("getMargin", function(e) {
+	        	marginOrig = $('.open ul').css('marginLeft').replace('px', '');
+	        	if (marginOrig == '0') {
+	        		$('.previous', this).hide();
+	        		$('.next', this).show();
+	        	} else if (marginOrig == '-1934') {
+	        		$('.previous', this).show();
+	        		$('.next', this).hide();
+	        	} else {
+	        		$('a', this).show();
+	        	}
+	        	console.log(marginOrig);
+	        });
+	        
+	        $('.open .gallery').hover(function() {
+	        	$(this).trigger("getMargin");
+	        	$('.overlay', this).fadeIn();
+	        }, function() {
+	        	$('.overlay', this).fadeOut();
+	        });
+	        
+	        $('.overlay .next').click(function() {
+	        	marginL = marginOrig*1 - 967;
+	        	$(this).parent().siblings('ul').animate({marginLeft: marginL + "px"}, {"duration": 450, "easing": "easeInOutBack", "complete": function() {
+	        				$(this).parent().triggerHandler('mouseover');
+	        			}
+	        		});
+	        	return false;
+	        });
+	        
+	        $('.overlay .previous').click(function() {
+	        	marginL = marginOrig*1 + 967;
+	        	$(this).parent().siblings('ul').animate({marginLeft: marginL + "px"}, {"duration": 450, "easing": "easeInOutBack", "complete": function() {
+		        			$(this).parent().triggerHandler('mouseover');
+		        		}
+	        		});
+	        	return false;
+	        });
 		});
 	</script>
 
