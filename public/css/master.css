@@ -729,9 +729,92 @@ h1 {
 }
 
 
+/* !-- work nav -- */
+
+.nav.work li.project {
+	background: #fff;
+	border: #bfbfbf solid 1px;
+	height: 78px;
+	margin: .4545em 2em;
+	padding: .454545em;
+	position: relative;
+	width: 987px;
+}
+
+	.nav.work li.project a.title {
+		background-image: url(/images/workArrow.png);
+		display: block;
+		height: 56px;
+		left: 5px;
+		padding: 1em;
+		position: absolute;
+		top: 5px;
+		width: 259px;
+		z-index: 2;
+	}
+	
+		.nav.work li.project a.title span {	
+			background-image: url(/images/workNav.png);	
+			height: 53px;
+			width: 180px;
+		}
+	
+			a.title:hover span, a.title:focus span {
+				background-position: 0 -53px;
+			}
+
+	.nav.work li.project .thumb {
+		border: #d0d0d0 solid 1px;
+		position: absolute;
+		right: 5px;
+		top: 6px;
+	}
+	
+.nav.work li.project.open {
+	height: auto;
+}
+
+	.open a.title {
+		background-position: 0 -78px;
+	}
+
+	.open a.title span, .open a.title span:hover, .open a.title span:focus {
+		background-position: 0 -106px;
+	}
+
+	.open .meta {
+		background-image: url(/images/workArrow.png);
+		background-position: 0 -158px;
+		border-right: #b0b0b0 solid 1px;
+		border-top: #d0d0d0 solid 1px;
+		height: 75px;
+		left: 5px;
+		position: absolute;
+		top: 6px;
+		padding-left: 285px;
+		width: 700px;
+		z-index: 1;
+	}
+	
+		.open .meta p {
+			width: 299px;
+		}
+		
+		.open .meta .view {
+			background: url(/images/viewBtn.png);
+			height: 66px;
+			margin: .454545em;
+			width: 139px;
+		}
+		
+			.open .meta .view:hover, .open .meta .view:focus {
+				background-position: 0 -66px;
+			}
+
+
 /* !-- img replace -- */
 
-#logo, #headerContent .nav li a, .headline h2, .resume a, #about .col2 h3, #featuredWork h3, #twitter h5, #social .nav li a {
+#logo, #headerContent .nav li a, .headline h2, .resume a, #about .col2 h3, #featuredWork h3, .open .meta .view, #twitter h5, #social .nav li a, .nav.work li.project a.title span {
 	display: block;
 	overflow:hidden;
 	text-indent:-9999px;
@@ -740,17 +823,17 @@ h1 {
 
 /* !-- floats -- */
 
-h1, #headerContent .nav li a, .col1, .about img, .resume, .interests1, .interests2, .col2 h4, .clients, .friends1, .friends2, #featuredWork h3, #featuredWork address, #featuredWork p, #footerContent .footMeta, .foot.nav li, #twitter, .tweet_avatar, .tweet_date, #social .nav li a {
+h1, #headerContent .nav li a, .col1, .about img, .resume, .interests1, .interests2, .col2 h4, .clients, .friends1, .friends2, #featuredWork h3, #featuredWork address, #featuredWork p, #footerContent .footMeta, .open .meta p, .foot.nav li, #twitter, .tweet_avatar, .tweet_date, #social .nav li a {
 	float: left;
 }
 
-#contactInfo, #headerContent .nav, .col2, #featuredWork li ul, #social, #social .nav, #social .socialType {
+#contactInfo, #headerContent .nav, .col2, #featuredWork li ul, .open .meta .view, #social, #social .nav, #social .socialType {
 	float: right;
 }
 
 /* !-- clearing all floats -- */
 
-#headerContent:after, #mainContent:after, .widget:after, #featuredWork li.project:after, #footerContent:after, .foot.nav:after, #social:after {
+#headerContent:after, #mainContent:after, .widget:after, #featuredWork li.project:after, .open .meta:after, #footerContent:after, .foot.nav:after, #social:after {
 	clear: both;
 	content: ".";
 	display: block;
