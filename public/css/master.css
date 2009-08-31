@@ -258,6 +258,10 @@ h1 {
 	#about .headline {
 		background-position: 590px 66px;
 	}
+	
+	#contact .headline {
+		background-position: 590px 66px;
+	}
 
 .headline h2 {
 	background-image:url(/images/headline.gif);
@@ -278,6 +282,12 @@ h1 {
 	background-position: 0 -120px;
 	height: 54px;
 	width: 351px;
+}
+
+#contact .headline h2 {
+	background-position: 0 -174px;
+	height: 55px;
+	width: 425px;
 }
 	
 .headline p {
@@ -300,6 +310,11 @@ h1 {
 	}
 
 	#about .headline p {
+		width: 503px;
+		height: 43px;
+	}
+
+	#contact .headline p {
 		width: 503px;
 		height: 43px;
 	}
@@ -353,7 +368,7 @@ h1 {
 			color: #6c0011;
 		}
 
-	#about .col2 h3 {
+	.col2 h3 {
 		background-image: url(/images/favThings.gif);
 		border-bottom: #fff solid 5px;
 		height: 76px;
@@ -931,7 +946,7 @@ h1 {
 
 /* !-- img replace -- */
 
-#logo, #headerContent .nav li a, .headline h2, .resume a, #about .col2 h3, #featuredWork h3, .open .meta .view, .open .overlay a, #twitter h5, #social .nav li a, .nav.work li.project a.title span {
+#logo, #headerContent .nav li a, .headline h2, .resume a, .col2 h3, #featuredWork h3, .open .meta .view, .open .overlay a, #twitter h5, #social .nav li a, .nav.work li.project a.title span {
 	display: block;
 	overflow:hidden;
 	text-indent:-9999px;
