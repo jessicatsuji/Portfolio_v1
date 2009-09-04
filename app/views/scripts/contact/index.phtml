@@ -3,31 +3,39 @@
 		<h2>Contact Me</h2>
 		<p>Shoot me a message if you&rsquo;re interested in learning more about my work or starting a conversation. I&rsquo;d really love to hear from you.</p>
 	</div>
-	<div class="contact">
+	
+	<div class="contact<?php if ( $this->success != "" ) echo " success"; ?>">
 		<form id="mail" method="post" action="/contact/mail">
  			<fieldset>
  				<div class="userInput">
 	 				<label>Your Name:</label>
-	 				<input type="text" name="name" id="name" value="Your Name" />
+	 				<input type="text" name="name" id="name" value="<?= $this->name ?>" />
 	 				<label>Your Email Address:</label>
-	 				<input type="text" name="email" id="email" value="Your Email Address" />
+	 				<input type="text" name="email" id="email" value="<?= $this->email ?>" />
 	 				
-	 				<span id="alert">You entered something wrong</span>
+	 				<?php 	if ( $this->alert != "" ) { 
+	 							foreach( $this->alert as $a ) { ?>
+	 				<span class="alert">
+	 					<?php 		echo $a; ?>
+	 				</span>
+	 				<?php		}
+	 						} ?>
 	 				
 	 				<label>Your Message:</label>
-	 				<textarea rows="5" name="message" id="message">Your Message</textarea>
+	 				<textarea rows="5" name="message" id="message"><?= $this->message ?></textarea>
 	 			</div>
  				
  				<button type="submit" name="send" id="send">Send Your Message</button>
  			</fieldset>
  		</form>
-<!--
+
  		<div id="mail" class="success">
  			<div class="userInput">
-	 			<span id="name">Name</span>
-	 			<span id="email">email</span>
+	 			<span id="name"><?= $this->name ?></span>
+	 			<span id="email"><?= $this->email ?></span>
 	 			
-	 			<p id="message">User's Message</p>
+	 			<p id="message"><?= (strlen( $this->message ) > 451 ) ? substr( stripslashes( $this->message ), 0, 450 ) . "[...]" : $this->message ?></p>
+	 			<a id="another" href="/contact/another" title="Send Another Message">Send Another Message</a>
 	 		</div>
  					
 			<div id="thankYou">
@@ -35,7 +43,7 @@
 				<span>Sent Your Message</span>
 			</div>
 		</div>
--->
+
 	</div>
 </div>
 
@@ -44,21 +52,21 @@
 		<h3>A Sneak Peek At What I'm Doing</h3>
 		
 		<span class="update">
-			<img src="/images/me.jpg" alt="Jessica M. Tsuji" />
+			<img src="/images/updates/update1.jpg" alt="update" />
+			<h5>September 18, 2009</h5>
+			<span>I graduate today and stuff. There is a lot going on. It is very exciting.I graduate today and stuff. There is a lot going on. It is very exciting. I graduate today and stuff. There is a lot going on. It is very exciting.</span>
+		</span>
+		
+		<span class="update">
+			<img src="/images/updates/update1.jpg" alt="update" />
 			<h5>September 18, 2009</h5>
 			<span>I graduate today and stuff. There is a lot going on. It is very exciting. I graduate today and stuff. There is a lot going on. It is very exciting. I graduate today and stuff. There is a lot going on. It is very exciting. I graduate today and stuff. There is a lot going on. It is very exciting.I graduate today and stuff. There is a lot going on. It is very exciting. I graduate today and stuff. There is a lot going on. It is very exciting.</span>
 		</span>
 		
 		<span class="update">
-			<img src="/images/me.jpg" alt="Jessica M. Tsuji" />
+			<img src="/images/updates/update1.jpg" alt="update" />
 			<h5>September 18, 2009</h5>
-			<span>I graduate today and stuff. There is a lot going on. It is very exciting. I graduate today and stuff. There is a lot going on. It is very exciting. I graduate today and stuff. There is a lot going on. It is very exciting. I graduate today and stuff. There is a lot going on. It is very exciting.I graduate today and stuff. There is a lot going on. It is very exciting. I graduate today and stuff. There is a lot going on. It is very exciting.</span>
-		</span>
-		
-		<span class="update">
-			<img src="/images/me.jpg" alt="Jessica M. Tsuji" />
-			<h5>September 18, 2009</h5>
-			<span>I graduate today and stuff. There is a lot going on. It is very exciting. I graduate today and stuff. There is a lot going on. It is very exciting. I graduate today and stuff. There is a lot going on. It is very exciting. I graduate today and stuff. There is a lot going on. It is very exciting.I graduate today and stuff. There is a lot going on. It is very exciting. I graduate today and stuff. There is a lot going on. It is very exciting.</span>
+			<span>I graduate today and stuff. There is a lot going on. It is very exciting. I graduate today and stuff.</span>
 		</span>
 		
 		<h4>More Ways to Reach Me:</h4>

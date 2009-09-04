@@ -403,6 +403,14 @@ h1 {
 	margin-left: 2.2em;
 }
 
+.success form#mail, div#mail {
+	display: none;
+}
+
+.success div#mail {
+	display: block;
+}
+
 	#mail {
 		background: url(/images/address.gif) 384px center no-repeat;
 		padding: 1em;
@@ -418,7 +426,7 @@ h1 {
 			height: 1px;
 		}
 		
-		#mail input, .userInput span {
+		#mail input, div#mail .userInput span {
 			margin-bottom: .5em;
 			width: 60%;
 			padding: 5px 0;
@@ -427,33 +435,39 @@ h1 {
 			#mail input {
 				background: #e1e1e1;
 				border: #fafafa solid 1px;
-				padding: 10px 5px;
+				color: #414141;
+				padding: 8px;
 			}
 		
-			#mail input#email, .userInput span#email {
+			#mail input#email, div#mail .userInput span#email {
 				margin-bottom: 30px;
 			}
 		
-		#alert {
+		.alert {
 			background: url(/images/error.png) no-repeat;
 			color: #AF0020;
 			margin-bottom: .5em;
-			padding-left: 2.5em;
-			width: 95%;
+			padding: .3em 2.5em;
+			width: 90%;
 		}
 		
-		#mail textarea, .userInput p {
+		#mail textarea, .success .userInput p#message {
 			height: 220px;
 			padding: 5px 0;
-			width: 95%;
+			width: 90%;
 		}
 		
 			#mail textarea {
 				background: #e1e1e1;
 				border: #fafafa solid 1px;
+				color: #414141;
 				font-family: Verdana, Helvetica, "sans-serif";
 				font-size: 11px;
-				padding: 5px;
+				padding: 8px;
+			}
+		
+			.success .userInput p#message {
+				line-height: normal;
 			}
 		
 		.userInput {
@@ -473,6 +487,17 @@ h1 {
 				font-size: 18px;
 				font-weight: bold;
 			}
+			
+			#another {
+				background: url(/images/email_add.png) no-repeat;
+				font-size: 10px;
+				height: 16px;
+				padding: .3em 0 0 2.5em;
+			}
+			
+				#another:hover, #another:focus {
+					background-position: 0 -16px;
+				}
 		
 		#send, #thankYou {
 			height: 94px;
@@ -482,6 +507,7 @@ h1 {
 		
 			#send {
 				background: url(/images/sendMessage.png) no-repeat;
+				cursor: pointer;
 				width: 171px;
 			}
 			
@@ -544,7 +570,7 @@ h1 {
 	.col2 h5 {
 		border-bottom: #8a4856 solid 1px;
 		font-size: 16px;
-		margin-bottom: 1em;
+		margin-bottom: .6em;
 		padding-bottom: .4em;
 		width: 209px;
 	}
@@ -833,6 +859,7 @@ h1 {
 }
 
 #featuredWork.enabled h3.activeTxt {
+	background-color: transparent;
 	border: none;
 	display: none;
 	z-index: 3;
