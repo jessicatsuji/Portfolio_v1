@@ -129,7 +129,7 @@ h1 {
 		}
 
 		#work .navWork a {
-			background-position: 0 -122px;
+			background-position: 0 -124px;
 		}
 
 	.navAbout a {
@@ -142,7 +142,7 @@ h1 {
 		}
 
 		#about .navAbout a {
-			background-position: -240px -122px;
+			background-position: -240px -124px;
 		}
 
 	.navContact a {
@@ -155,7 +155,7 @@ h1 {
 		}
 
 		#contact .navContact a {
-			background-position: -446px -122px;
+			background-position: -446px -124px;
 		}
 	
 .resume a {
@@ -166,6 +166,55 @@ h1 {
 
 	.resume a:hover, .resume a:focus {
 		background-position: 0 -76px;
+	}
+
+.col2 a {
+	border-bottom: #a5a5a5 dotted 1px;
+	color: #575757;
+	line-height: 20px;
+}
+
+	.col2 a:hover, .col2 a:focus {
+		border-bottom: #8a4856 dotted 1px;
+		color: #6c0011;
+	}
+	
+.networks li a {
+	border: none;
+	height: 32px;
+	width: 32px;
+}
+
+	.networks li a:hover, .networks li a:focus {
+		border: none;
+	}
+
+	.networks li.behance a {
+		background: url(/images/social/behance.png);
+	}
+
+	.networks li.twitter a {
+		background: url(/images/social/twitter.png);
+	}
+
+	.networks li.facebook a {
+		background: url(/images/social/facebook.png);
+	}
+
+	.networks li.linkedin a {
+		background: url(/images/social/linkedin.png);
+	}
+
+	.networks li.delicious a {
+		background: url(/images/social/delicious.png);
+	}
+
+	.networks li.wordpress a {
+		background: url(/images/social/wordpress.png);
+	}
+
+	.networks li.flickr a {
+		background: url(/images/social/flickr.png);
 	}
 
 #social .nav li a {
@@ -348,6 +397,103 @@ h1 {
 	padding: 5px;
 }
 
+.contact {
+	background: url(/images/grayStripe.gif) repeat;
+	border: #fff solid 6px;
+	margin-left: 2.2em;
+}
+
+	#mail {
+		background: url(/images/address.gif) 384px center no-repeat;
+		padding: 1em;
+		position: relative;
+	}
+	
+		#mail label, #mail input, #mail textarea, #alert, #mail span, #mail p {
+			display: block;
+		}
+	
+		#mail label {
+			width: 0;
+			height: 1px;
+		}
+		
+		#mail input, .userInput span {
+			margin-bottom: .5em;
+			width: 60%;
+			padding: 5px 0;
+		}
+		
+			#mail input {
+				background: #e1e1e1;
+				border: #fafafa solid 1px;
+				padding: 10px 5px;
+			}
+		
+			#mail input#email, .userInput span#email {
+				margin-bottom: 30px;
+			}
+		
+		#alert {
+			background: url(/images/error.png) no-repeat;
+			color: #AF0020;
+			margin-bottom: .5em;
+			padding-left: 2.5em;
+			width: 95%;
+		}
+		
+		#mail textarea, .userInput p {
+			height: 220px;
+			padding: 5px 0;
+			width: 95%;
+		}
+		
+			#mail textarea {
+				background: #e1e1e1;
+				border: #fafafa solid 1px;
+				font-family: Verdana, Helvetica, "sans-serif";
+				font-size: 11px;
+				padding: 5px;
+			}
+		
+		.userInput {
+			border-right: #fff solid 1px;
+			padding-right: 1em;
+			margin: 1em;
+			width: 55%;
+		}
+		
+		.success .userInput {
+			color: #707070;
+			font-size: 14px;
+			font-style: italic;
+		}
+		
+			.success .userInput span {
+				font-size: 18px;
+				font-weight: bold;
+			}
+		
+		#send, #thankYou {
+			height: 94px;
+			position: absolute;
+			right: 10px;
+		}
+		
+			#send {
+				background: url(/images/sendMessage.png) no-repeat;
+				width: 171px;
+			}
+			
+			#thankYou {
+				background: url(/images/thankYou.png) no-repeat;
+				width: 319px;
+			}
+		
+			#send:hover, #send:focus {
+				background-position: 0 -94px;
+			}
+
 .col2 {
 	background: #fff;
 	border: #d5d5d5 solid 1px;
@@ -357,38 +503,65 @@ h1 {
 	width: 314px;
 }
 
-	.col2 a {
-		border-bottom: #a5a5a5 dotted 1px;
-		color: #575757;
-		line-height: 20px;
-	}
-
-		.col2 a:hover, .col2 a:focus {
-			border-bottom: #8a4856 dotted 1px;
-			color: #6c0011;
-		}
-
 	.col2 h3 {
-		background-image: url(/images/favThings.gif);
 		border-bottom: #fff solid 5px;
 		height: 76px;
 		width: 314px;
 	}
 	
-	.interests1, .interests2, .clients, .friends1, .friends2 {
+		#about .col2 h3 {
+			background-image: url(/images/favThings.gif);
+		}
+	
+		#contact .col2 h3 {
+			background-image: url(/images/sneakPeek.gif);
+		}
+	
+	.interests1, .interests2, .clients, .friends1, .friends2, .networks {
 		padding: 1em;
 		width: 42%;
 	}
 	
-	.clients, .col2 h4 {
+	.clients, .col2 h4, .networks {
 		width: 93%;
 	}
+	
+	.networks li {
+		margin-right: 1em;
+	}
+	
+		.networks li.flickr {
+			margin-right: 0;
+		}
 	
 	.col2 h4 {
 		border-bottom: #8a4856 solid 1px;
 		font-size: 20px;
 		margin: 1em 0 0 .5em;
 		padding-bottom: .4em;
+	}
+		
+	.col2 h5 {
+		border-bottom: #8a4856 solid 1px;
+		font-size: 16px;
+		margin-bottom: 1em;
+		padding-bottom: .4em;
+		width: 209px;
+	}
+	
+	.col2 .update {
+		display: block;
+		padding: 1em;
+	}
+		
+		.update span {
+			line-height: normal;
+		}
+	
+	.col2 img {
+		border: #fff solid 1px;
+		margin-right: 1em;
+		width: 70px;
 	}
 
 .widget {
@@ -946,7 +1119,7 @@ h1 {
 
 /* !-- img replace -- */
 
-#logo, #headerContent .nav li a, .headline h2, .resume a, .col2 h3, #featuredWork h3, .open .meta .view, .open .overlay a, #twitter h5, #social .nav li a, .nav.work li.project a.title span {
+#logo, #headerContent .nav li a, .headline h2, .resume a, .col2 h3, #featuredWork h3, .open .meta .view, .open .overlay a, #twitter h5, .networks li a, #social .nav li a, .nav.work li.project a.title span, #mail label, #send, #thankYou {
 	display: block;
 	overflow:hidden;
 	text-indent:-9999px;
@@ -955,7 +1128,7 @@ h1 {
 
 /* !-- floats -- */
 
-h1, #headerContent .nav li a, .col1, .about img, .resume, .interests1, .interests2, .col2 h4, .clients, .friends1, .friends2, #featuredWork h3, #featuredWork address, #featuredWork p, #featuredWork li .gallery ul li, .open .gallery li, .open .overlay a.previous, .open .info .overview, #footerContent .footMeta, .open .meta p, .foot.nav li, #twitter, .tweet_avatar, .tweet_date, #social .nav li a {
+h1, #headerContent .nav li a, .col1, .about img, .resume, .interests1, .interests2, .col2 h4, .clients, .friends1, .friends2, .networks, .networks li, #featuredWork h3, #featuredWork address, #featuredWork p, #featuredWork li .gallery ul li, .open .gallery li, .open .overlay a.previous, .open .info .overview, .userInput, .update, .col2 h5, .col2 img, #footerContent .footMeta, .open .meta p, .foot.nav li, #twitter, .tweet_avatar, .tweet_date, #social .nav li a {
 	float: left;
 }
 
@@ -965,7 +1138,7 @@ h1, #headerContent .nav li a, .col1, .about img, .resume, .interests1, .interest
 
 /* !-- clearing all floats -- */
 
-#headerContent:after, #mainContent:after, .widget:after, #featuredWork li.project:after, .open .meta:after, .open .gallery:after, .open .overlay:after, .open .info:after, #footerContent:after, .foot.nav:after, #social:after {
+#headerContent:after, #mainContent:after, .widget:after, #featuredWork li.project:after, .open .meta:after, .open .gallery:after, .open .overlay:after, .open .info:after, #mail:after, .update:after, #footerContent:after, .foot.nav:after, #social:after {
 	clear: both;
 	content: ".";
 	display: block;

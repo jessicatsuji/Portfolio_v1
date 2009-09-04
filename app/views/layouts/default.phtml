@@ -26,18 +26,18 @@
 			}, function() {
 				$(this).parent().removeClass('hover');
 			}).click(function() {
-				$('.activeTxt').animate({opacity:1}, 500).fadeOut(800, function() {
+				$('.activeTxt').animate({opacity:1}, 200).fadeOut(600, function() {
 					$(this).remove();	
 				});
 				
 				$(this).parent().prepend('<h3 class="activeTxt"><!-- --></h3>');
 				
-				$('.activeTxt').animate({opacity:1}, 500).fadeIn(1000);
+				$('.activeTxt').animate({opacity:1}, 200).fadeIn(600);
 				
 				var topPos = $(this).css('top');
 				$('.arrow').animate({
 					top: topPos
-				}, {"duration": 1200, "easing": "easeInOutElastic"});
+				}, {"duration": 800, "easing": "easeInOutElastic"});
 			});
 			
 			$('#featuredWork h3.arrow').unbind('click');
