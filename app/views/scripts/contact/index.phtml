@@ -34,7 +34,7 @@
 	 			<span id="name"><?= $this->name ?></span>
 	 			<span id="email"><?= $this->email ?></span>
 	 			
-	 			<p id="message"><?= (strlen( $this->message ) > 451 ) ? substr( stripslashes( $this->message ), 0, 450 ) . "[...]" : $this->message ?></p>
+	 			<p id="message"><?= (strlen( $this->message ) > 451 ) ? substr( stripslashes( $this->message ), 0, 450 ) . "[...]" : stripslashes($this->message) ?></p>
 	 			<a id="another" href="/contact/another" title="Send Another Message">Send Another Message</a>
 	 		</div>
  					

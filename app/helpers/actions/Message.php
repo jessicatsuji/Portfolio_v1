@@ -49,5 +49,15 @@
 			return $this->messages;
 		}
 		
+		public function sendMessage( $array ) 
+		{	
+			$mail = new Zend_Mail();
+			$mail->setBodyText($array['Message'])
+			    ->setFrom($array['Email'], $array['Name'])
+			    ->addTo('jessi.cat87@gmail.com', 'Jessica Tsuji')
+			    ->setSubject('Email from Portfolio Site')
+			    ->send();
+		}
+		
 	}
 ?>

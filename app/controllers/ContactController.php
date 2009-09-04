@@ -47,6 +47,8 @@
 				$this->session_alert->alert = $validate;
 				
 			} else {
+				$message_helper->sendMessage( $postArray );
+				
 				Zend_Session::namespaceUnset('session_alert');
 				$this->session_input->success = 'success';
 			}

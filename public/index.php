@@ -24,6 +24,7 @@ Zend_Loader::loadClass('Zend_Session_Namespace');
 Zend_Loader::loadClass('Zend_Layout');
 Zend_Loader::loadClass('Zend_Validate_EmailAddress');
 Zend_Loader::loadClass('Zend_Validate_StringLength');
+Zend_Loader::loadClass('Zend_Mail');
 
 //StartMVC
 $mvc_options = array(
