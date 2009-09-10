@@ -40,7 +40,7 @@ $config = new Zend_Config(
 			'adapter' => 'Mysqli',
 			'params' => array(
 				'host' => 'localhost',
-				'dbname' => 'dbname',
+				'dbname' => 'Portfolio_v1',
 				'username' => 'root',
 				'password' => 'root',
 			)

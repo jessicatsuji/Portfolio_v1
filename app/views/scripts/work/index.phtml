@@ -4,21 +4,16 @@
 </div>
 
 <ul class="nav work">
-	<li id="encompass" class="project">
-		<a class="title" href="/work/individual/project/blend" title="Blend Messenger">
-			<span>Blend Messenger</span>
-		</a>
-		<img class="thumb" src="/images/work/encompass_thumb.jpg" alt="Encompass Institute" />
-	</li>
-	<li id="blend" class="project">
-		<a class="title" href="/work/individual/project/blend" title="Blend Messenger">
-			<span>Blend Messenger</span>
+	
+	<?php 	foreach ( $this->projects as $proj ) { ?>
+	<li id="<?= $proj['selector'] ?>" class="project"><a class="title" href="/work/individual/project/blend" title="Blend Messenger">
+			<span><?= $proj['title'] ?></span>
 		</a>
 		<div class="full">
 			<div class="meta">
-				<a class="view" href="http://www.adelineinteractive.com/Blend" title="Blend Messenger">View This Project</a>
-				<p class="role"><strong>Role: </strong>Designer / Developer</p>
-				<p class="date"><strong>Date Completed: </strong>October 2008</p>
+				<a class="view" href="<?= $proj['url'] ?>" title="<?= $proj['title'] ?>">View This Project</a>
+				<p class="role"><strong>Role: </strong><?= $proj['role'] ?></p>
+				<p class="date"><strong>Date Completed: </strong><?= $proj['date'] ?></p>
 			</div>
 			
 			<div class="gallery">
@@ -27,62 +22,33 @@
 					<a class="next" href="#">Next &raquo;</a>
 				</div>
 				<ul>
+					<?php 	foreach( $proj['photos'] as $photo ) { ?>
 					<li>
-						<img src="/images/work/encompass_full.jpg" alt="Encompass Institute" />
+						<img src="<?= $photo['url'] ?>" alt="<?= $proj['title'] ?>" />
 					</li>
-					<li>
-						<img src="/images/work/encompass_full.jpg" alt="Encompass Institute" />
-					</li>
-					<li>
-						<img src="/images/work/encompass_full.jpg" alt="Encompass Institute" />
-					</li>
+					<?		} ?>
 				</ul>
 			</div>
 			
 			<div class="info">
 				<div class="overview">
 					<h3>Overview:</h3>
-					<p>The EnCompass Institute is a non-profit organization based in Portland, Oregon promoting the child development theory of Natural Learning Rhythms.  Their previous identity and website were not conveying the organization&rsquo;s current mission and philosophy to their target audience.  Over the course of an eleven week term, I was a part of a five person team in charge of implementing a complete redesign of both a new identity and website for this growing organization.</p>
-					<p>I placed high priority in giving in-depth consideration to the brand&rsquo;s redefinition and implementing Web Standards based practices to produce a flexible end product that met the organization&rsquo;s business objectives.</p>
+					<?= $proj['overview'] ?>
 				</div>
 				<div class="tech">
 					<h3>Tech Specs:</h3>
 					<ul>
-						<li>(X)HTML</li>
-						<li>CSS</li>
-						<li>PHP</li>
-						<li>MySQL</li>
-						<li>Ajax</li>
-						<li>Zend Framework</li>
+						<?php 	foreach( $proj['tech'] as $tech ) { ?>
+						<li>
+							<?= $tech ?>
+						</li>
+						<?		} ?>
 					</ul>
 				</div>
 			</div>
 		</div>
 		
-		<img class="thumb" src="/images/work/encompass_thumb.jpg" alt="Encompass Institute" />
+		<img class="thumb" src="/images/work/<?= $proj['selector'] ?>_thumb.jpg" alt="<?= $proj['title'] ?>" />
 	</li>
-	<li class="blend project">
-		<a class="title" href="/work/individual/project/blend" title="Blend Messenger">
-			<span>Blend Messenger</span>
-		</a>
-		<img class="thumb" src="/images/work/encompass_thumb.jpg" alt="Encompass Institute" />
-	</li>
-	<li class="blend project">
-		<a class="title" href="/work/individual/project/blend" title="Blend Messenger">
-			<span>Blend Messenger</span>
-		</a>
-		<img class="thumb" src="/images/work/encompass_thumb.jpg" alt="Encompass Institute" />
-	</li>
-	<li class="blend project">
-		<a class="title" href="/work/individual/project/blend" title="Blend Messenger">
-			<span>Blend Messenger</span>
-		</a>
-		<img class="thumb" src="/images/work/encompass_thumb.jpg" alt="Encompass Institute" />
-	</li>
-	<li class="blend project">
-		<a class="title" href="/work/individual/project/blend" title="Blend Messenger">
-			<span>Blend Messenger</span>
-		</a>
-		<img class="thumb" src="/images/work/encompass_thumb.jpg" alt="Encompass Institute" />
-	</li>
+	<?php 	} ?>
 </ul>

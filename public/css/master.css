@@ -979,12 +979,24 @@ h1 {
 		.nav.work li.project a.title span {	
 			background-image: url(/images/workNav.png);	
 			height: 53px;
-			width: 180px;
+			width: 230px;
 		}
 	
-			a.title:hover span, a.title:focus span {
-				background-position: 0 -53px;
+			#blend a.title span {
+				background-position: 0 0;
 			}
+	
+				#blend a.title:hover span, #blend a.title:focus span {
+					background-position: 0 -53px;
+				}
+	
+			#encompass a.title span {
+				background-position: -230px 0;
+			}
+	
+				#encompass a.title:hover span, #encompass a.title:focus span {
+					background-position: -230px -53px;
+				}
 
 	.nav.work li.project .thumb {
 		border: #d0d0d0 solid 1px;
@@ -1001,13 +1013,17 @@ h1 {
 		background-position: 0 -78px;
 	}
 
-	.open a.title span, .open a.title span:hover, .open a.title span:focus {
-		background-position: 0 -106px;
-	}
+		#blend.open a.title span, #blend.open a.title span:hover, #blend.open a.title span:focus {
+			background-position: 0 -106px;
+		}
+
+		#encompass.open a.title span, #encompass.open a.title span:hover, #encompass.open a.title span:focus {
+			background-position: -230px -106px;
+		}
 
 	.open .meta {
 		background-image: url(/images/workArrow.png);
-		background-position: 0 -158px;
+		background-position: -750px -158px;
 		border-right: #b0b0b0 solid 1px;
 		border-top: #d0d0d0 solid 1px;
 		height: 75px;
