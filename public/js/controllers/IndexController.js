@@ -59,7 +59,10 @@ function IndexController() {
         	var metaInfo = $(meta).children();
         	var full = $('.full', project);  
         	var gallery = $('.gallery', project);  
-        	var photos = $('li', gallery);  
+        	var photos = $('li', gallery); 
+        	var overlay = $('.overlay', gallery);
+        	var previous = $('.previous', overlay);
+        	var next = $('.next', overlay); 
         	
         	//set variables
         	var amount = index_model.get.amount(photos);
@@ -95,45 +98,56 @@ function IndexController() {
 	        //binding custom event to gallery to get the current margin and determine which overlay controls should be shown
 	        $(gallery).bind("getMargin", function(e) {
 	        	//get css marginLeft attribute value
-	        	marginOrig = index_model.get.css($('ul', this), 'marginLeft');
+	        	marginOrig = index_model.get.css($('ul', gallery), 'marginLeft');
 	        	
 	        	//default to show all controls
-	        	self.view.render.all($('.overlay a', this));
+	        	self.view.render.all($('a', overlay));
 	        	
 	        	//if at first photo, don't show previous
 	        	if (marginOrig == '0') 
-		        	self.view.render.none($('.previous', this));
+		        	self.view.render.none($(previous));
 	        	
 	        	//if at last, don't show next
 	        	if ( marginOrig == ( -maxWidth ) ) 
-		        	self.view.render.none($('.next', this));
+		        	self.view.render.none($(next));
 	        });
 	        
 	        //bind hover events for the gallery controls
 	        $(gallery).hover(function() {
 	        	$(this).trigger("getMargin");
-	        	self.view.render.fadeIn({el: $('.overlay', this)});
+	        	self.view.render.fadeIn({el: $(overlay)});
 	        }, function() {
-	        	self.view.render.fadeOut({el: $('.overlay', this)});
+	        	self.view.render.fadeOut({el: $(overlay)});
 	        });
-		        
-		        $('.overlay .next', project).click(function() {
-		        	marginL = marginOrig*1 - 967;
-		        	$(this).parent().siblings('ul').animate({marginLeft: marginL + "px"}, {"duration": 450, "easing": "easeInOutBack", "complete": function() {
-		        				$(this).parent().triggerHandler('mouseover');
-		        			}
-		        		});
-		        	return false;
-		        });
-		        
-		        $('.overlay .previous', project).click(function() {
-		        	marginL = marginOrig*1 + 967;
-		        	$(this).parent().siblings('ul').animate({marginLeft: marginL + "px"}, {"duration": 450, "easing": "easeInOutBack", "complete": function() {
-			        			$(this).parent().triggerHandler('mouseover');
-			        		}
-		        		});
-		        	return false;
-		        });
+	        
+	        //bind click event to the overlay controls		        
+	        $(next).click(function() {
+	        	marginL = marginOrig*1 - 967;
+	        	self.view.animate.marginL({
+		        	el: $('ul', gallery),
+	    			mL: marginL + "px",
+	    			dur: 450,
+	    			ea: "easeInOutBack"
+	    		}, function() {
+					$(gallery).triggerHandler('mouseover');
+				});
+
+	        	return false;
+	        });
+	        
+	        $(previous).click(function() {
+	        	marginL = marginOrig*1 + 967;
+	        	self.view.animate.marginL({
+		        	el: $('ul', gallery),
+	    			mL: marginL + "px",
+	    			dur: 450,
+	    			ea: "easeInOutBack"
+	    		}, function() {
+					$(gallery).triggerHandler('mouseover');
+				});
+	        	
+	        	return false;
+	        });
 			
 			return false;
 			
@@ -164,7 +178,7 @@ function IndexController() {
         	//Slide gallery and overview back up, remove open class
         	self.view.animate.up({
     			el: full,
-    			ea: "easeInBack",
+    			ea: "easeOutCirc",
     			dur: 600
     		}, function() {
 				$(this).parent().removeClass('open');

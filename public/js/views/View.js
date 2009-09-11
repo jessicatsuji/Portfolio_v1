@@ -113,6 +113,20 @@ function View() {
     			"easing": ease,
     			"complete": (fn) ? fn : function() {}
     		});
+		},
+		marginL: function(object, fn) {
+			selector = (object.el) ? object.el : "";
+			marginL = (object.mL) ? object.mL : "";
+			ease = (object.ea) ? object.ea : "def";
+			dur = (object.dur) ? object.dur : "";
+
+        	$(selector).animate({
+        		marginLeft: marginL
+        	}, {
+        		"duration": dur, 
+        		"easing": ease, 
+        		"complete": (fn) ? fn : function() {}
+    		});
 		}
 	}
 }
