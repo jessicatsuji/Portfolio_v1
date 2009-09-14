@@ -6,7 +6,8 @@
 <ul class="nav work">
 	
 	<?php 	foreach ( $this->projects as $proj ) { ?>
-	<li id="<?= $proj['selector'] ?>" class="project"><a class="title" href="/work/individual/project/blend" title="Blend Messenger">
+	<li id="<?= $proj['selector'] ?>" class="project<?= ($proj['open'] == 'open') ? " individOpen" : ""; ?>">
+		<a class="title" href="/work/individual/project/blend" title="Blend Messenger">
 			<span><?= $proj['title'] ?></span>
 		</a>
 		<div class="full">

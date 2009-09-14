@@ -4,8 +4,6 @@ function HomeController() {
 	var self = this;
 	//Constructor
 	this.construct = function() {
-		//self.slideshowAction();
-		//self.newAction();
 		self.sifrAction();
 		self.twitterAction();
 		self.pngfixAction();
@@ -51,11 +49,10 @@ function HomeController() {
 	this.featuredAction = function() {
 		var index_model = new IndexModel();
 		
-		/*
-var gallery_helper = new GalleryHelper( index_model, self.view );
-		gallery_helper.root = $('.title');
-		gallery_helper.construct();
-*/
+		var gallery_helper = new GalleryHelper( index_model, self.view );
+		gallery_helper.root = $('#featuredWork h3.tab');
+		gallery_helper.liWidth = 730;
+		gallery_helper.construct.featured();
 	}
 	
 	self.construct();

@@ -127,6 +127,19 @@ function View() {
         		"easing": ease, 
         		"complete": (fn) ? fn : function() {}
     		});
+		},
+		top: function(object, fn) {
+			selector = (object.el) ? object.el : "";
+			top = (object.top) ? object.top : "";
+			ease = (object.ea) ? object.ea : "def";
+			dur = (object.dur) ? object.dur : "";
+			
+			$(selector).stop().animate({
+				top: top }, 
+			{
+				duration: dur, 
+				easing: ease
+			});
 		}
 	}
 }

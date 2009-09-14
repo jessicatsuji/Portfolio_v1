@@ -826,6 +826,7 @@ h1 {
 
 #featuredWork.enabled li.project {
 	background: #ebebeb;
+	height: 323px;
 	left: 2em;
 	position: absolute;
 	top: .8em;
@@ -943,8 +944,9 @@ h1 {
 
 #featuredWork.enabled li .gallery {
 	border-left: #fff solid 5px;
-	height: 298px;
+	height: 299px;
 	width: 717px;
+	z-index: 1;
 }
 
 #featuredWork.enabled li .gallery ul li {
@@ -1084,6 +1086,9 @@ h1 {
 		position: relative;
 		width: 967px;
 	}
+		#featuredWork .open .gallery {
+			margin-bottom: 0;
+		}
 	
 		.open .gallery ul {
 			width: 2901px;
@@ -1103,9 +1108,13 @@ h1 {
 		padding-top: 10em;
 		width: 967px;
 	}
+		
+		#featuredWork .open .overlay {
+			width: 718px;
+		}
 	
 		.open .overlay a {
-			background: url(/images/overlayArrows.png);
+			background-image: url(/images/overlayArrows.png);
 			height: 90px;
 			width: 113px;
 		}
@@ -1114,12 +1123,23 @@ h1 {
 				background-position: 0 -90px;
 			}
 		
+			.open .overlay a.view {
+				background-position: 0 -180px;
+				position: absolute;
+				left: 279px;
+				width: 160px;
+			}
+		
 				.open .overlay a.previous:hover, .open .overlay a.previous:focus {
 					background-position: -113px 0;
 				}
 			
 				.open .overlay a.next:hover, .open .overlay a.next:focus {
 					background-position: -113px -90px;
+				}
+			
+				.open .overlay a.view:hover, .open .overlay a.view:focus {
+					background-position: -160px -180px;
 				}
 				
 	.open .info {

@@ -24,6 +24,7 @@
 		public function indexAction()
 		{
 			$projects = $this->projects_model->getAll( );
+			$openProject = ( $this->_request->getParam('project') ) ? $this->_request->getParam('project') : "";
 			
 			foreach ( $projects as &$proj ) {
 				$technologies = $this->project_technology_model->getAllByProject ( array( $proj['id'] ) );
@@ -36,6 +37,8 @@
 				
 				$photos = $this->photos = $this->photos_model->getAllByProject( array( $proj['id'] ) );
 				$proj['photos'] = $photos;
+				
+				$proj['open'] = ($proj['selector'] == $openProject) ? 'open' : "";
 			}
 			$this->view->projects = $projects;
 		}

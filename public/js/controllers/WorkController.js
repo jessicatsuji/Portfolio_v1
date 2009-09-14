@@ -4,8 +4,6 @@ function WorkController() {
 	var self = this;
 	//Constructor
 	this.construct = function() {
-		//self.slideshowAction();
-		//self.newAction();
 		self.sifrAction();
 		self.twitterAction();
 		self.pngfixAction();
@@ -53,7 +51,8 @@ function WorkController() {
 		
 		var gallery_helper = new GalleryHelper( index_model, self.view );
 		gallery_helper.root = $('.title');
-		gallery_helper.construct();
+		gallery_helper.liWidth = 967;
+		gallery_helper.construct.work();
 	}
 	
 	self.construct();
