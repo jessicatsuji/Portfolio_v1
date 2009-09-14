@@ -138,7 +138,8 @@ function View() {
 				top: top }, 
 			{
 				duration: dur, 
-				easing: ease
+				easing: ease,
+				complete: (fn) ? fn : function() {}
 			});
 		}
 	}

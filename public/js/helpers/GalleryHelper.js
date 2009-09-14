@@ -15,6 +15,12 @@ function GalleryHelper(model, view) {
 			//binding the hover events for each tab
 			self.toggleTab.featured();
 			$('#blend h3.tab').triggerHandler('click');
+			
+			//default to automatically start automation until hover
+			self.automate.start('.open', '.project', '.tab', 8000);
+			
+			//bind automation controls
+			self.automate.bind($('#featuredWork'));
 		},
 		work: function() {
 			//binding the hover events for each tab
@@ -32,7 +38,6 @@ function GalleryHelper(model, view) {
 				self.classing.removing($(this), 'hover');
 			});
 			$(self.root).bind('click', function() {
-				console.log('click');
 				var project = $(this).parent();
 				var gallery = $('#' + model.get.attr($(project), 'id') + " .gallery");
 				var overlay = $('.overlay', gallery);
@@ -59,7 +64,7 @@ function GalleryHelper(model, view) {
 				$('.activeTxt', project).animate({opacity:1}, 200).fadeIn(600);
 				
 				//fading in gallery
-				$("ul", gallery).fadeIn(1000);
+				$("ul", gallery).animate({display: "none"}, 400).fadeIn(1200);
 				
 				//binding custom event to gallery to get the current margin and determine which overlay controls should be shown
 				self.gallery.getMargin($(gallery), $(overlay), $(previous), $(next), $(view));
@@ -274,6 +279,32 @@ function GalleryHelper(model, view) {
 		        	return false;
 		        });
 			}
+		}
+	}
+	
+	this.automate = {
+		bind: function(el) {
+			$(el).hover(function() {
+				//pause automation on hover
+				self.automate.pause();
+			}, function() {
+				//automate the tab events when user is outside the feature area
+				self.automate.start('.open', '.project', '.tab', 3800);
+			});
+		},
+		start: function(open, el, tab, speed) {
+			self.interval = setInterval(function() {
+				if($(open).next(el).length) {
+					next = $(open).next(el); 
+					console.log($(tab, next));
+					$(tab, next).triggerHandler('click');
+				} else {
+					$(tab, el + ":first").triggerHandler('click');
+				}
+			}, speed);
+		}, 
+		pause: function() {
+			clearInterval(self.interval);
 		}
 	}
 }
