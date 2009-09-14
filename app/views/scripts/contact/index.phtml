@@ -51,46 +51,36 @@
 	<div class="widget">
 		<h3>A Sneak Peek At What I'm Doing</h3>
 		
+		<?php	foreach ( $this->updates as $update ) { ?>
 		<span class="update">
-			<img src="/images/updates/update1.jpg" alt="update" />
-			<h5>September 18, 2009</h5>
-			<span>I graduate today and stuff. There is a lot going on. It is very exciting.I graduate today and stuff. There is a lot going on. It is very exciting. I graduate today and stuff. There is a lot going on. It is very exciting.</span>
+			<img src="/images/updates/<?= $update['img_url'] ?>" alt="update" />
+			<h5><?= $update['date'] ?></h5>
+			<span><?= $update['message'] ?></span>
 		</span>
-		
-		<span class="update">
-			<img src="/images/updates/update1.jpg" alt="update" />
-			<h5>September 18, 2009</h5>
-			<span>I graduate today and stuff. There is a lot going on. It is very exciting. I graduate today and stuff. There is a lot going on. It is very exciting. I graduate today and stuff. There is a lot going on. It is very exciting. I graduate today and stuff. There is a lot going on. It is very exciting.I graduate today and stuff. There is a lot going on. It is very exciting. I graduate today and stuff. There is a lot going on. It is very exciting.</span>
-		</span>
-		
-		<span class="update">
-			<img src="/images/updates/update1.jpg" alt="update" />
-			<h5>September 18, 2009</h5>
-			<span>I graduate today and stuff. There is a lot going on. It is very exciting. I graduate today and stuff.</span>
-		</span>
+		<?php	} ?>
 		
 		<h4>More Ways to Reach Me:</h4>
 		<ul class="networks">
 			<li class="behance">
-				<a href="#">Behance</a>
+				<a href="http://www.behance.net/jessica_tsuji" title="Behance Portfolio">Behance</a>
 			</li>
 			<li class="twitter">
-				<a href="#">Twitter</a>
+				<a href="http://twitter.com/jessica_tsuji" title="Twitter Feed">Twitter</a>
 			</li>
 			<li class="facebook">
-				<a href="#">Facebook</a>
+				<a href="http://www.facebook.com/jessicatsuji" title="Facebook Profile">Facebook</a>
 			</li>
 			<li class="linkedin">
-				<a href="#">LinkedIn</a>
+				<a href="http://www.linkedin.com/in/jessicatsuji" title="LinkedIn Profile">LinkedIn</a>
 			</li>
 			<li class="delicious">
-				<a href="#">Delicious</a>
+				<a href="http://delicious.com/jessica_tsuji" title="Delicious Links">Delicious</a>
 			</li>
 			<li class="wordpress">
-				<a href="#">Wordpress</a>
+				<a href="http://www.adelineinteractive.com/logicbored/" title="LogicBored Blog">Wordpress Blog</a>
 			</li>
 			<li class="flickr">
-				<a href="#">Flickr</a>
+				<a href="http://www.flickr.com/photos/jessica_tsuji">Flickr</a>
 			</li>
 		</ul>
 	</div>

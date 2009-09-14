@@ -1,4 +1,6 @@
 <?php
+	require_once( '../app/models/UpdatesModel.php' );
+	
 	class ContactController extends Zend_Controller_Action
 	{
 		public function init() {
@@ -18,7 +20,9 @@
 		
 		public function indexAction()
 		{
-
+			$this->updates_model = new UpdatesModel( );
+			
+			$this->view->updates = $this->updates_model->getRecent();
 		}
 		
 		public function mailAction()
