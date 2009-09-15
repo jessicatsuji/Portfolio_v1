@@ -53,8 +53,11 @@ body {
 	
 	#home #mainWrapper {
 		background: url(/images/homeBG.gif) top center no-repeat;
-		height: 660px;
 	}
+	
+		#home #mainWrapper.enabled {
+			height: 660px;
+		}
 
 #headerContent, #mainContent, #footerContent {
 	width: 1045px;
@@ -803,7 +806,7 @@ h1 {
 }
 
 #featuredWork li .gallery ul {
-	width: 2895px;
+	width: 3868px;
 }
 
 #featuredWork li .gallery ul li {
@@ -813,6 +816,10 @@ h1 {
 	margin-right: 1.2em;
 	width:715px;
 	overflow: hidden;
+}
+
+#featuredWork .active, #featuredWork .overlay {
+	display: none;
 }
 
 
@@ -953,6 +960,10 @@ h1 {
 	height: 295px;
 }
 
+#featuredWork.enabled .active, #featuredWork.enabled .overlay {
+	display: block;
+}
+
 
 /* !-- work nav -- */
 
@@ -999,6 +1010,22 @@ h1 {
 				#encompass a.title:hover span, #encompass a.title:focus span {
 					background-position: -230px -53px;
 				}
+	
+			#johnny a.title span {
+				background-position: -460px 0;
+			}
+	
+				#johnny a.title:hover span, #johnny a.title:focus span {
+					background-position: -460px -53px;
+				}
+	
+			#hawaiian a.title span {
+				background-position: -680px 0;
+			}
+	
+				#hawaiian a.title:hover span, #hawaiian a.title:focus span {
+					background-position: -680px -53px;
+				}
 
 	.nav.work li.project .thumb {
 		border: #d0d0d0 solid 1px;
@@ -1021,6 +1048,14 @@ h1 {
 
 		#encompass.open a.title span, #encompass.open a.title span:hover, #encompass.open a.title span:focus {
 			background-position: -230px -106px;
+		}
+
+		#johnny.open a.title span, #johnny.open a.title span:hover, #johnny.open a.title span:focus {
+			background-position: -460px -106px;
+		}
+
+		#hawaiian.open a.title span, #hawaiian.open a.title span:hover, #hawaiian.open a.title span:focus {
+			background-position: -680px -106px;
 		}
 
 	.open .meta {
@@ -1091,7 +1126,7 @@ h1 {
 		}
 	
 		.open .gallery ul {
-			width: 2901px;
+			width: 3868px;
 			height: 301px;
 		}
 	

@@ -11,6 +11,7 @@ function GalleryHelper(model, view) {
 		featured: function() {
 			//adding 'enabled' class to specify javascript is enabled
 			self.classing.adding($('#featuredWork'), 'enabled');	
+			self.classing.adding($('#mainWrapper'), 'enabled');	
 			
 			//binding the hover events for each tab
 			self.toggleTab.featured();
