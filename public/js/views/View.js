@@ -58,14 +58,14 @@ function View() {
 			speed = (object.dur) ? object.dur : 500;
 			callback = (fn) ? fn : function() {};
 			
-			$(selector).fadeIn(speed, callback());
+			$(selector).stop().fadeTo(speed, 1,  callback());
 		},
 		fadeOut: function (object, fn) {
 			selector = (object.el) ? object.el : "";
 			speed = (object.dur) ? object.dur : 500;
 			callback = (fn) ? fn : function() {};
 			
-			$(selector).fadeOut(speed, callback());
+			$(selector).stop().fadeTo(speed, 0, callback());
 		}
 	}
 	
@@ -74,6 +74,11 @@ function View() {
 		bgPos: function(selector, string) {
 			$(selector).css({
 				backgroundPosition: string
+			});
+		}, 
+		opacity: function(selector, string) {
+			$(selector).css({
+				opacity: string
 			});
 		}
 	}

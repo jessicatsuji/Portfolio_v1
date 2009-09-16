@@ -43,6 +43,31 @@
 			$this->view->projects = $projects;
 		}
 		
+		public function individualAction() {
+			$openProject = ( $this->_request->getParam('project') ) ? $this->_request->getParam('project') : "";
+			
+			$proj = $this->projects_model->getOne( array( $openProject ) );
+			
+			if ( $proj ) {
+				$technologies = $this->project_technology_model->getAllByProject ( array( $proj['id'] ) );
+				
+				$proj['tech'] = array();
+				foreach ( $technologies as $technology ) {
+					$tech = $this->technologies_model->getOne( array( $technology['technology_id'] ) );
+					array_push( $proj['tech'], $tech['name'] );
+				}
+				
+				$photos = $this->photos = $this->photos_model->getAllByProject( array( $proj['id'] ) );
+				$proj['photos'] = $photos;
+				
+				$proj['open'] = ($proj['selector'] == $openProject) ? 'open' : "";
+				
+				$this->view->proj = $proj;
+			} else {
+				header("Location: /error/error");
+			}
+		}
+		
 	}
 	
 ?>

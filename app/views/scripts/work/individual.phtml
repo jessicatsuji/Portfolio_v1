@@ -3,18 +3,17 @@
 	<p>I strongly believe in the ideology of doing what you love. For me that means creating quality interactive experiences that are meant to be used &amp; founded on strong ideals to be proud of. Whether that foundation is built on a strong sense of accessibility &amp; design or well structured object oriented MVC programming, it&rsquo;s the functional results that keep my passion for the Web alive &amp; burning.</p>
 </div>
 
-<ul class="nav work">
+<ul class="nav work individual">
 	
-	<?php 	foreach ( $this->projects as $proj ) { ?>
-	<li id="<?= $proj['selector'] ?>" class="project<?= ($proj['open'] == 'open') ? " individOpen" : ""; ?>">
-		<a class="title" href="/work/individual/project/<?= $proj['selector'] ?>" title="Blend Messenger">
-			<span><?= $proj['title'] ?></span>
+	<li id="<?= $this->proj['selector'] ?>" class="project<?= ($this->proj['open'] == 'open') ? " individOpen" : ""; ?>">
+		<a class="title" href="/work/individual/project/blend" title="Blend Messenger">
+			<span><?= $this->proj['title'] ?></span>
 		</a>
 		<div class="full">
 			<div class="meta">
-				<a class="view" href="<?= $proj['url'] ?>" title="<?= $proj['title'] ?>">View This Project</a>
-				<p class="role"><strong>Role: </strong><?= $proj['role'] ?></p>
-				<p class="date"><strong>Date Completed: </strong><?= $proj['date'] ?></p>
+				<a class="view" href="<?= $this->proj['url'] ?>" title="<?= $this->proj['title'] ?>">View This Project</a>
+				<p class="role"><strong>Role: </strong><?= $this->proj['role'] ?></p>
+				<p class="date"><strong>Date Completed: </strong><?= $this->proj['date'] ?></p>
 			</div>
 			
 			<div class="gallery">
@@ -23,9 +22,9 @@
 					<a class="next" href="#">Next &raquo;</a>
 				</div>
 				<ul>
-					<?php 	foreach( $proj['photos'] as $photo ) { ?>
+					<?php 	foreach( $this->proj['photos'] as $photo ) { ?>
 					<li>
-						<img src="<?= $photo['url'] ?>" alt="<?= $proj['title'] ?>" />
+						<img src="<?= $photo['url'] ?>" alt="<?= $this->proj['title'] ?>" />
 					</li>
 					<?		} ?>
 				</ul>
@@ -34,12 +33,12 @@
 			<div class="info">
 				<div class="overview">
 					<h3>Overview:</h3>
-					<?= $proj['overview'] ?>
+					<?= $this->proj['overview'] ?>
 				</div>
 				<div class="tech">
 					<h3>Tech Specs:</h3>
 					<ul>
-						<?php 	foreach( $proj['tech'] as $tech ) { ?>
+						<?php 	foreach( $this->proj['tech'] as $tech ) { ?>
 						<li>
 							<?= $tech ?>
 						</li>
@@ -49,7 +48,6 @@
 			</div>
 		</div>
 		
-		<img class="thumb" src="/images/work/<?= $proj['selector'] ?>_thumb.jpg" alt="<?= $proj['title'] ?>" />
+		<img class="thumb" src="/images/work/<?= $this->proj['selector'] ?>_thumb.jpg" alt="<?= $this->proj['title'] ?>" />
 	</li>
-	<?php 	} ?>
 </ul>

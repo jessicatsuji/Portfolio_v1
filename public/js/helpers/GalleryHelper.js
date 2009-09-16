@@ -195,7 +195,7 @@ function GalleryHelper(model, view) {
 	
 	this.metaView = {
 		revealR: function(txt, container) {
-			self.view.render.none(txt);
+			self.view.css.opacity(txt, 0);
 	    	self.view.css.bgPos(container, "-750px -158px");
 	    	self.view.animate.bg({
 				el: container,

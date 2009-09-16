@@ -960,8 +960,12 @@ h1 {
 	height: 295px;
 }
 
-#featuredWork.enabled .active, #featuredWork.enabled .overlay {
+#featuredWork.enabled .active, #featuredWork.enabled .open .overlay {
 	display: block;
+}
+
+#featuredWork.enabled .open .overlay {
+	opacity: 0;
 }
 
 
@@ -1034,31 +1038,35 @@ h1 {
 		top: 6px;
 	}
 	
-.nav.work li.project.open {
+.nav.work li.project.open, .nav.work.individual li.project {
 	height: auto;
 }
 
-	.open a.title {
+	.open a.title, .individual a.title {
 		background-position: 0 -78px;
 	}
 
-		#blend.open a.title span, #blend.open a.title span:hover, #blend.open a.title span:focus {
+		#blend.open a.title span, #blend.open a.title span:hover, #blend.open a.title span:focus,
+		.individual #blend a.title span, .individual #blend a.title span:hover, .individual #blend a.title span:focus {
 			background-position: 0 -106px;
 		}
 
-		#encompass.open a.title span, #encompass.open a.title span:hover, #encompass.open a.title span:focus {
+		#encompass.open a.title span, #encompass.open a.title span:hover, #encompass.open a.title span:focus,
+		.individual #encompass a.title span, .individual #encompass a.title span:hover, .individual #encompass a.title span:focus {
 			background-position: -230px -106px;
 		}
 
-		#johnny.open a.title span, #johnny.open a.title span:hover, #johnny.open a.title span:focus {
+		#johnny.open a.title span, #johnny.open a.title span:hover, #johnny.open a.title span:focus,
+		.individual #johnny a.title span, .individual #johnny a.title span:hover, .individual #johnny a.title span:focus {
 			background-position: -460px -106px;
 		}
 
-		#hawaiian.open a.title span, #hawaiian.open a.title span:hover, #hawaiian.open a.title span:focus {
+		#hawaiian.open a.title span, #hawaiian.open a.title span:hover, #hawaiian.open a.title span:focus,
+		.individual #hawaiian a.title span, .individual #hawaiian a.title span:hover, .individual #hawaiian a.title span:focus {
 			background-position: -680px -106px;
 		}
 
-	.open .meta {
+	.open .meta, .individual .meta {
 		background-image: url(/images/workArrow.png);
 		background-position: -750px -158px;
 		border-right: #b0b0b0 solid 1px;
@@ -1072,49 +1080,62 @@ h1 {
 		z-index: 1;
 	}
 	
-		.open .meta p {
+	.individual .individOpen .meta {
+		background-position: 0 -158px;
+	}
+	
+	.enabled .individOpen.open .meta {
+		background-position: -750px -158px;
+	}
+	
+		.open .meta p, .individual .meta p {
 			color: #616060;
 			font-size: 14px;
 			width: 545px;
 		}
 		
-			.open .meta p strong {
+			.open .meta p strong, .individual .meta p strong {
 				color: #767676;
 				font-size: 22px;
 				vertical-align: baseline;
 			}
 		
-			.open .meta p.role {
+			.open .meta p.role, .individual .meta p.role {
 				border-bottom: #ababab solid 1px;
 				padding: 13px 0 10px;
 			}
 			
-			.open .meta p.date {
+			.open .meta p.date, .individual .meta p.date {
 				padding: 11px 0 0;
 			}
 		
-		.open .meta .view {
+		.open .meta .view, .individual .meta .view {
 			background: url(/images/viewBtn.png);
 			height: 66px;
 			margin: .454545em;
 			width: 139px;
 		}
 		
-			.open .meta .view:hover, .open .meta .view:focus {
+			.open .meta .view:hover, .open .meta .view:focus,
+			.individual .meta .view:hover, .individual .meta .view:focus {
 				background-position: 0 -66px;
 			}
 			
-	.full {
+	.full, .enabled .individOpen .full {
 		display: none;
 	}
-			
-	.open .full {
+	
+	.individual .individOpen .full {
+		display: block;
+	}
+	
+	.open .full, .individual .full {
 		background: url(/images/grayStripe.gif) repeat;
 		margin-top: 82px;
 		padding: 10px;
 	}
 			
-	.open .gallery {
+	.open .gallery, .individual .gallery {
 		height: 301px;
 		overflow: hidden;
 		margin-bottom: 10px;
@@ -1125,21 +1146,21 @@ h1 {
 			margin-bottom: 0;
 		}
 	
-		.open .gallery ul {
+		.open .gallery ul, .individual .gallery ul {
 			width: 3868px;
 			height: 301px;
 		}
 	
-		.open .gallery li {
+		.open .gallery li, .individual .gallery li {
 			border: #fff solid 1px;
 			height: 299px;
 			width: 965px;
 		}
 		
-	.open .overlay {
-		display: none;
+	.open .overlay, .individual .overlay {
 		position: absolute;
 		height: 301px;
+		opacity: 0;
 		padding-top: 10em;
 		width: 967px;
 	}
@@ -1177,14 +1198,14 @@ h1 {
 					background-position: -160px -180px;
 				}
 				
-	.open .info {
+	.open .info, .individual .info {
 		background: url(/images/grayStripe_dark.gif) repeat;
 		border: #f6f6f6 solid 1px;
 		color: #333;
 		padding: 1em 2em;
 	}
 	
-		.open .info h3 {
+		.open .info h3, .individual .info h3 {
 			border-bottom: #8c5d5d solid 1px;
 			color: #6c0011;
 			font-size: 22px;
@@ -1192,7 +1213,7 @@ h1 {
 			margin-bottom: .5em;
 		}
 	
-		.open .info .overview {
+		.open .info .overview, .individual .info .overview {
 			background: url(/images/overviewBorder.gif) top right no-repeat;
 			padding-right: 25px;
 			font-size: 12px;
@@ -1200,27 +1221,27 @@ h1 {
 			width: 655px;
 		}
 		
-			.open .info .overview p {
+			.open .info .overview p, .individual .info .overview p {
 				margin-bottom: .6667em;
 			}
 		
-		.open .info .tech {
+		.open .info .tech, .individual .info .tech {
 			width: 228px;
 		}
 		
-			.open .info .tech ul {
+			.open .info .tech ul, .individual .info .tech ul {
 				list-style: circle inside;
 				margin-top: 13px;
 			}
 			
-				.open .info .tech ul li {
+				.open .info .tech ul li, .individual .info .tech ul li {
 					margin-bottom: 1em;
 				}
 
 
 /* !-- img replace -- */
 
-#logo, #headerContent .nav li a, .headline h2, .resume a, .col2 h3, #featuredWork h3, .open .meta .view, .open .overlay a, #twitter h5, .networks li a, #social .nav li a, .nav.work li.project a.title span, #mail label, #send, #thankYou {
+#logo, #headerContent .nav li a, .headline h2, .resume a, .col2 h3, #featuredWork h3, .open .meta .view, .open .overlay a, .individual .meta .view, .individual .overlay a, #twitter h5, .networks li a, #social .nav li a, .nav.work li.project a.title span, #mail label, #send, #thankYou {
 	display: block;
 	overflow:hidden;
 	text-indent:-9999px;
@@ -1229,17 +1250,17 @@ h1 {
 
 /* !-- floats -- */
 
-h1, #headerContent .nav li a, .col1, .about img, .resume, .interests1, .interests2, .col2 h4, .clients, .friends1, .friends2, .networks, .networks li, #featuredWork h3, #featuredWork address, #featuredWork p, #featuredWork li .gallery ul li, .open .gallery li, .open .overlay a.previous, .open .info .overview, .userInput, .update, .col2 h5, .col2 img, #footerContent .footMeta, .open .meta p, .foot.nav li, #twitter, .tweet_avatar, .tweet_date, #social .nav li a {
+h1, #headerContent .nav li a, .col1, .about img, .resume, .interests1, .interests2, .col2 h4, .clients, .friends1, .friends2, .networks, .networks li, #featuredWork h3, #featuredWork address, #featuredWork p, #featuredWork li .gallery ul li, .open .gallery li, .open .overlay a.previous, .open .info .overview, .individual .gallery li, .individual .overlay a.previous, .individual .info .overview, .userInput, .update, .col2 h5, .col2 img, #footerContent .footMeta, .open .meta p, .foot.nav li, #twitter, .tweet_avatar, .tweet_date, #social .nav li a {
 	float: left;
 }
 
-#contactInfo, #headerContent .nav, .col2, #featuredWork li .gallery, .open .meta .view, .open .overlay a.next, .open .info .tech, #social, #social .nav, #social .socialType {
+#contactInfo, #headerContent .nav, .col2, #featuredWork li .gallery, .open .meta .view, .open .overlay a.next, .open .info .tech, .individual .meta .view, .individual .overlay a.next, .individual .info .tech, #social, #social .nav, #social .socialType {
 	float: right;
 }
 
 /* !-- clearing all floats -- */
 
-#headerContent:after, #mainContent:after, .widget:after, #featuredWork li.project:after, .open .meta:after, .open .gallery:after, .open .overlay:after, .open .info:after, #mail:after, .update:after, #footerContent:after, .foot.nav:after, #social:after {
+#headerContent:after, #mainContent:after, .widget:after, #featuredWork li.project:after, .open .meta:after, .open .gallery:after, .open .overlay:after, .open .info:after, .individual .meta:after, .individual .gallery:after, .individual .overlay:after, .individual .info:after, #mail:after, .update:after, #footerContent:after, .foot.nav:after, #social:after {
 	clear: both;
 	content: ".";
 	display: block;
