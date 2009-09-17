@@ -11,7 +11,9 @@
 		</a>
 		<div class="full">
 			<div class="meta">
+				<?php if ($this->proj['url'] != "") { ?>
 				<a class="view" href="<?= $this->proj['url'] ?>" title="<?= $this->proj['title'] ?>">View This Project</a>
+				<?php } ?>
 				<p class="role"><strong>Role: </strong><?= $this->proj['role'] ?></p>
 				<p class="date"><strong>Date Completed: </strong><?= $this->proj['date'] ?></p>
 			</div>

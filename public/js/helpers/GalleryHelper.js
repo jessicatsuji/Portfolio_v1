@@ -297,7 +297,6 @@ function GalleryHelper(model, view) {
 			self.interval = setInterval(function() {
 				if($(open).next(el).length) {
 					next = $(open).next(el); 
-					console.log($(tab, next));
 					$(tab, next).triggerHandler('click');
 				} else {
 					$(tab, el + ":first").triggerHandler('click');

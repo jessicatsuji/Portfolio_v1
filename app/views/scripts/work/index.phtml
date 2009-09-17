@@ -12,7 +12,9 @@
 		</a>
 		<div class="full">
 			<div class="meta">
+				<?php if ($proj['url'] != "") { ?>
 				<a class="view" href="<?= $proj['url'] ?>" title="<?= $proj['title'] ?>">View This Project</a>
+				<?php } ?>
 				<p class="role"><strong>Role: </strong><?= $proj['role'] ?></p>
 				<p class="date"><strong>Date Completed: </strong><?= $proj['date'] ?></p>
 			</div>
