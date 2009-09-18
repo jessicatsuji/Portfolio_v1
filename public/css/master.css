@@ -1024,11 +1024,43 @@ h1 {
 				}
 	
 			#hawaiian a.title span {
-				background-position: -680px 0;
+				background-position: -690px 0;
 			}
 	
 				#hawaiian a.title:hover span, #hawaiian a.title:focus span {
-					background-position: -680px -53px;
+					background-position: -690px -53px;
+				}
+	
+			#kurt a.title span {
+				background-position: -920px 0;
+			}
+	
+				#kurt a.title:hover span, #kurt a.title:focus span {
+					background-position: -920px -53px;
+				}
+	
+			#logicbored a.title span {
+				background-position: -1150px 0;
+			}
+	
+				#logicbored a.title:hover span, #logicbored a.title:focus span {
+					background-position: -1150px -53px;
+				}
+	
+			#salmonStreet a.title span {
+				background-position: -1380px 0;
+			}
+	
+				#salmonStreet a.title:hover span, #salmonStreet a.title:focus span {
+					background-position: -1380px -53px;
+				}
+	
+			#webraising a.title span {
+				background-position: -1610px 0;
+			}
+	
+				#webraising a.title:hover span, #webraising a.title:focus span {
+					background-position: -1610px -53px;
 				}
 
 	.nav.work li.project .thumb {
@@ -1063,7 +1095,27 @@ h1 {
 
 		#hawaiian.open a.title span, #hawaiian.open a.title span:hover, #hawaiian.open a.title span:focus,
 		.individual #hawaiian a.title span, .individual #hawaiian a.title span:hover, .individual #hawaiian a.title span:focus {
-			background-position: -680px -106px;
+			background-position: -690px -106px;
+		}
+
+		#kurt.open a.title span, #kurt.open a.title span:hover, #kurt.open a.title span:focus,
+		.individual #kurt a.title span, .individual #kurt a.title span:hover, .individual #kurt a.title span:focus {
+			background-position: -920px -106px;
+		}
+
+		#logicbored.open a.title span, #logicbored.open a.title span:hover, #logicbored.open a.title span:focus,
+		.individual #logicbored a.title span, .individual #logicbored a.title span:hover, .individual #logicbored a.title span:focus {
+			background-position: -1150px -106px;
+		}
+
+		#salmonStreet.open a.title span, #salmonStreet.open a.title span:hover, #salmonStreet.open a.title span:focus,
+		.individual #salmonStreet a.title span, .individual #salmonStreet a.title span:hover, .individual #salmonStreet a.title span:focus {
+			background-position: -1380px -106px;
+		}
+
+		#webraising.open a.title span, #webraising.open a.title span:hover, #webraising.open a.title span:focus,
+		.individual #webraising a.title span, .individual #webraising a.title span:hover, .individual #webraising a.title span:focus {
+			background-position: -1610px -106px;
 		}
 
 	.open .meta, .individual .meta {
