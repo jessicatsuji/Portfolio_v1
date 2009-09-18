@@ -406,7 +406,7 @@ h1 {
 	margin-left: 2.2em;
 }
 
-.success form#mail, div#mail {
+.success form#mailForm, div#mail {
 	display: none;
 }
 
@@ -414,35 +414,35 @@ h1 {
 	display: block;
 }
 
-	#mail {
+	#mail, #mailForm {
 		background: url(/images/address.gif) 384px center no-repeat;
 		padding: 1em;
 		position: relative;
 	}
 	
-		#mail label, #mail input, #mail textarea, #alert, #mail span, #mail p {
+		#mailForm label, #mailForm input, #mailForm textarea, #alert, #mailForm span, #mailForm p {
 			display: block;
 		}
 	
-		#mail label {
+		#mailForm label {
 			width: 0;
 			height: 1px;
 		}
 		
-		#mail input, div#mail .userInput span {
+		#mailForm input, div#mail .userInput span {
 			margin-bottom: .5em;
 			width: 60%;
 			padding: 5px 0;
 		}
 		
-			#mail input {
+			#mailForm input {
 				background: #d8d8d8;
 				border: #fafafa solid 1px;
 				color: #414141;
 				padding: 8px;
 			}
 		
-			#mail input#email, div#mail .userInput span#email {
+			#mailForm input#email, div#mail .userInput span#emailInput {
 				margin-bottom: 30px;
 			}
 		
@@ -454,13 +454,13 @@ h1 {
 			width: 90%;
 		}
 		
-		#mail textarea, .success .userInput p#message {
+		#mailForm textarea, .success .userInput p#messageInput {
 			height: 220px;
 			padding: 5px 0;
 			width: 90%;
 		}
 		
-			#mail textarea {
+			#mailForm textarea {
 				background: #d8d8d8;
 				border: #fafafa solid 1px;
 				color: #414141;
@@ -469,7 +469,7 @@ h1 {
 				padding: 8px;
 			}
 		
-			.success .userInput p#message {
+			.success .userInput p#messageInput {
 				line-height: normal;
 			}
 		
@@ -524,6 +524,10 @@ h1 {
 			#send:hover, #send:focus {
 				background-position: 0 -94px;
 			}
+			
+			div#mail.success span, div#mail.succes p {
+				display: block;
+			}
 
 .col2 {
 	background: #fff;
@@ -572,7 +576,7 @@ h1 {
 		padding-bottom: .4em;
 	}
 		
-	.col2 h5 {
+	.col2 strong {
 		border-bottom: #8a4856 solid 1px;
 		font-size: 16px;
 		margin-bottom: .6em;
@@ -1293,7 +1297,7 @@ h1 {
 
 /* !-- img replace -- */
 
-#logo, #headerContent .nav li a, .headline h2, .resume a, .col2 h3, #featuredWork h3, .open .meta .view, .open .overlay a, .individual .meta .view, .individual .overlay a, #twitter h5, .networks li a, #social .nav li a, .nav.work li.project a.title span, #mail label, #send, #thankYou {
+#logo, #headerContent .nav li a, .headline h2, .resume a, .col2 h3, #featuredWork h3, .open .meta .view, .open .overlay a, .individual .meta .view, .individual .overlay a, #twitter h5, .networks li a, #social .nav li a, .nav.work li.project a.title span, #mailForm label, #send, #thankYou {
 	display: block;
 	overflow:hidden;
 	text-indent:-9999px;
@@ -1302,7 +1306,7 @@ h1 {
 
 /* !-- floats -- */
 
-h1, #headerContent .nav li a, .col1, .about img, .resume, .interests1, .interests2, .col2 h4, .clients, .friends1, .friends2, .networks, .networks li, #featuredWork h3, #featuredWork address, #featuredWork p, #featuredWork li .gallery ul li, .open .gallery li, .open .overlay a.previous, .open .info .overview, .individual .gallery li, .individual .overlay a.previous, .individual .info .overview, .userInput, .update, .col2 h5, .col2 img, #footerContent .footMeta, .open .meta p, .foot.nav li, #twitter, .tweet_avatar, .tweet_date, #social .nav li a {
+h1, #headerContent .nav li a, .col1, .about img, .resume, .interests1, .interests2, .col2 h4, .clients, .friends1, .friends2, .networks, .networks li, #featuredWork h3, #featuredWork address, #featuredWork p, #featuredWork li .gallery ul li, .open .gallery li, .open .overlay a.previous, .open .info .overview, .individual .gallery li, .individual .overlay a.previous, .individual .info .overview, .userInput, .update, .col2 strong, .col2 img, #footerContent .footMeta, .open .meta p, .foot.nav li, #twitter, .tweet_avatar, .tweet_date, #social .nav li a {
 	float: left;
 }
 
@@ -1312,7 +1316,7 @@ h1, #headerContent .nav li a, .col1, .about img, .resume, .interests1, .interest
 
 /* !-- clearing all floats -- */
 
-#headerContent:after, #mainContent:after, .widget:after, #featuredWork li.project:after, .open .meta:after, .open .gallery:after, .open .overlay:after, .open .info:after, .individual .meta:after, .individual .gallery:after, .individual .overlay:after, .individual .info:after, #mail:after, .update:after, #footerContent:after, .foot.nav:after, #social:after {
+#headerContent:after, #mainContent:after, .widget:after, #featuredWork li.project:after, .open .meta:after, .open .gallery:after, .open .overlay:after, .open .info:after, .individual .meta:after, .individual .gallery:after, .individual .overlay:after, .individual .info:after, #mail:after, #mailForm:after, .update:after, #footerContent:after, .foot.nav:after, #social:after {
 	clear: both;
 	content: ".";
 	display: block;

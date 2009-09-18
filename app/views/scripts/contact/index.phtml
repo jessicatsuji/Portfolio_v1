@@ -5,7 +5,7 @@
 	</div>
 	
 	<div class="contact<?php if ( $this->success != "" ) echo " success"; ?>">
-		<form id="mail" method="post" action="/contact/mail">
+		<form id="mailForm" method="post" action="/contact/mail">
  			<fieldset>
  				<div class="userInput">
 	 				<label>Your Name:</label>
@@ -22,7 +22,7 @@
 	 						} ?>
 	 				
 	 				<label>Your Message:</label>
-	 				<textarea rows="5" name="message" id="message"><?= $this->message ?></textarea>
+	 				<textarea rows="5" cols="20" name="message" id="message"><?= $this->message ?></textarea>
 	 			</div>
  				
  				<button type="submit" name="send" id="send">Send Your Message</button>
@@ -31,10 +31,10 @@
 
  		<div id="mail" class="success">
  			<div class="userInput">
-	 			<span id="name"><?= $this->name ?></span>
-	 			<span id="email"><?= $this->email ?></span>
+	 			<span id="nameInput"><?= $this->name ?></span>
+	 			<span id="emailInput"><?= $this->email ?></span>
 	 			
-	 			<p id="message"><?= (strlen( $this->message ) > 451 ) ? substr( stripslashes( $this->message ), 0, 450 ) . "[...]" : stripslashes($this->message) ?></p>
+	 			<p id="messageInput"><?= (strlen( $this->message ) > 451 ) ? substr( stripslashes( $this->message ), 0, 450 ) . "[...]" : stripslashes($this->message) ?></p>
 	 			<a id="another" href="/contact/another" title="Send Another Message">Send Another Message</a>
 	 		</div>
  					
@@ -54,7 +54,7 @@
 		<?php	foreach ( $this->updates as $update ) { ?>
 		<span class="update">
 			<img src="/images/updates/<?= $update['img_url'] ?>" alt="update" />
-			<h5><?= $update['date'] ?></h5>
+			<strong><?= $update['date'] ?></strong>
 			<span><?= $update['message'] ?></span>
 		</span>
 		<?php	} ?>
