@@ -33,7 +33,7 @@
 			$db = $this->getDefaultAdapter();
 			
 			//Set arguments to select statement
-			$select = "SELECT * FROM $this->table LIMIT 3";
+			$select = "SELECT * FROM $this->table ORDER BY id DESC LIMIT 3";
 		
 			//Select from table
 			return $db->fetchAssoc($select);

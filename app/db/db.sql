@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 -- 
 -- Host: localhost
--- Generation Time: Sep 17, 2009 at 05:28 PM
+-- Generation Time: Sep 17, 2009 at 07:44 PM
 -- Server version: 5.0.19
 -- PHP Version: 5.1.6
 -- 
@@ -195,10 +195,11 @@ CREATE TABLE `updates` (
   `img_url` varchar(255) NOT NULL,
   `message` text NOT NULL,
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 -- 
 -- Dumping data for table `updates`
 -- 
 
 INSERT INTO `updates` VALUES (1, 'September 13, 2009', 'update1.jpg', 'All the major functionality for Portfolio V1 is complete! Now, it''s just a matter of putting in some content and prepping for the big day. It''s all starting to feel a bit surreal.');
+INSERT INTO `updates` VALUES (2, 'September 17, 2009', 'update2.jpg', 'It''s the day before graduation. Family from Hawaii has arrived and I am officially done with all my classes at the Art Institute of Portland.');
